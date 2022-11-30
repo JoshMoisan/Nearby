@@ -7,4 +7,6 @@ class Item < ApplicationRecord
   CONDITION = %w[New Good Fair Poor]
   validates :name, :category, :condition, :description, :price, presence: true
   validates :description, length: { minimum: 15 }
+  validates :category, inclusion: { in: CATEGORIES }
+  validates :condition, inclusion: { in: CONDITION }
 end
