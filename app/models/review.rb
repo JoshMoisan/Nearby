@@ -1,6 +1,6 @@
 class Review < ApplicationRecord
   belongs_to :booking
 
-  validates :rating, :comment, presence: true
-  validates :comment, length: { minimum: 15 }
+  validates :rating, presence: true, numericality: { only_integer: true }, inclusion: { in: 0..5 }
+  validates :comment, presence: true, length: { minimum: 15 }
 end
