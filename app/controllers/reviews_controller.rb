@@ -15,13 +15,15 @@ class ReviewsController < ApplicationController
       redirect_to review_path(@review), notice: 'Thank you for your review!'
     else
       render :new, status: :unprocessable_entity
+    end
+  end
 
-    def destroy
-      if @review.update(status: params[:status])
-          redirect_to user_path(current_user)
-      else
-          redirect_to item_path(@item)
-      end
+  def destroy
+    if @review.update(status: params[:status])
+      redirect_to user_path(current_user)
+    else
+      redirect_to item_path(@item)
+    end
   end
 
   private
