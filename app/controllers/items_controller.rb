@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @user = current_user
   end
 
   def create
