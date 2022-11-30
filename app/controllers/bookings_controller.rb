@@ -25,10 +25,17 @@ class BookingsController < ApplicationController
   end
 
   def update
+    @booking.user = current_user
+    if @booking.update(status: params[:status])
+      redirect_to user_path(current_user)
+    else
+      redirect_to item_path(@item)
+    end
   end
 
   def destroy
-    if @booking.update(status: params[:status])
+    @booking.user = current_user
+    if @booking.destroy
       redirect_to user_path(current_user)
     else
       redirect_to item_path(@item)
