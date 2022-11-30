@@ -13,6 +13,13 @@ gem "sprockets-rails"
 gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
+
+#Cloudinary
+gem "cloudinary"
+
+#Open-uri to make cloudinary seeds
+gem 'open-uri'
+
 gem "puma", "~> 5.0"
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
@@ -26,6 +33,8 @@ gem "stimulus-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
+
+gem "faker"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -47,6 +56,10 @@ gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
+
+#env and cloudinary
+gem "dotenv-rails", groups: [:development, :test]
+gem "cloudinary"
 
 gem "devise"
 gem "autoprefixer-rails"

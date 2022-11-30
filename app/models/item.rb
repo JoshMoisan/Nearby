@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
+  has_one_attached :photo
 
   # Pending validation when implemented: item_picture
   CATEGORIES = %w[Tools Electronics Gaming 'Arts & Crafts' Garden Decoration Sports Camping Other]
