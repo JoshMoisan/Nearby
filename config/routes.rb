@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   end
 
   resources :reviews, only: %i[destroy]
+  resources :items, only: %i[index]
 end
