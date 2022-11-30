@@ -1,2 +1,15 @@
 <h1>Bookings#new</h1>
 <p>Find me in app/views/bookings/new.html.erb</p>
+
+  <div>
+    <h1>New Booking</h1>
+  </div>
+  <div>
+    <%= simple_form_for [@item, @booking] do |f| %>
+      <%= f.input :start_date, as: :date, required: true, input_html: {class: "datepicker"} %>
+      <%= f.input :end_date, as: :date, required: true, input_html: {class: "datepicker"} %>
+      <%= f.submit "Request to book" %>
+    <% end %>
+  </div>
+
+<%# implement booking/price logic %>
