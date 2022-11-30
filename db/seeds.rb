@@ -23,6 +23,7 @@ puts 'Seeding db 🌱'
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
+    username: Faker::Name.first_name,
     description: Faker::Lorem.sentence(word_count: 10),
     password: "123456",
     address: Faker::Address.city,
@@ -31,11 +32,11 @@ puts 'Seeding db 🌱'
   3.times do
     item = Item.new(
       name: Faker::Appliance.equipment,
-      category: "Tools",
-      condition: ["damage", "used", "like new"].sample,
+      category: Item::CATEGORIES.sample,
+      condition: Item::CONDITION.sample,
       description: Faker::Lorem.sentence(word_count: 15),
       item_picture: Faker::LoremFlickr.image,
-      price: [1, 2 ,5 ,10 ,25].sample,
+      price: [1, 2, 5, 10, 25].sample,
       user_id: user.id
     )
                     # PROBLEM WITH THE UNSPLASH API
