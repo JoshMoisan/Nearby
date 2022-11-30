@@ -6,19 +6,6 @@ export default class extends Controller {
 
   connect() {
     console.log("Drag Home - connected")
-    console.log(this.draggingTarget)
-    this.dragginTarget.scrollIntoView({behavior:"smooth"});
+    this.draggingTarget.scrollIntoView({behavior:"smooth"});
   }
-
-  reveal() {
-    console.log("You're dragging right now")
-
-
-
-  }
-
-
-
-
-
 }

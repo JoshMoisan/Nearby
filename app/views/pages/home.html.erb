@@ -11,13 +11,16 @@
     <h1>NEARBY</h1>
 
 
-    <div class="white-circle">
+    <div class="white-circle" >
     </div>
 
     <div class="yellow-circle">
     </div>
 
-    <div class="yellow-rect" data-drag-home-target="dragging"                             data-action="drag->drag-home#reveal">
+    <div class="anchor" data-drag-home-target="dragging">
+    </div>
+
+    <div class="yellow-rect">
     </div>
 
     <div class="white-rect">
@@ -25,3 +28,21 @@
 
   </div>
 </div>
+
+
+<script>
+  window.onscroll = function(ev) {
+
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      setTimeout(function() {
+          location.href = "https://www.youtube.com/results?search_query=land+in+the+middle+of+a+webpage";
+      }, 100)
+    }
+
+    else if ((window.scrollY) === 0) {
+      setTimeout(function() {
+          location.href = "https://www.youtube.com/results?search_query=land+in+the+middle+of+a+webpage";
+      }, 100)
+    }
+  };
+</script>
