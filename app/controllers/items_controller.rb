@@ -7,6 +7,15 @@ class ItemsController < ApplicationController
     else
       @items = Item.all
     end
+    users = @items.map(&:user)
+    @markers = users.uniq.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        info_window: render_to_string(partial: "users/info_window", locals: {user: user})
+      }
+    end
+    @markers.compact
   end
 
   def show
