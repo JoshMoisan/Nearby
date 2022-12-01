@@ -1,0 +1,97 @@
+.show-content {
+  padding: 22px;
+  width: 100%;
+}
+
+.head-card {
+  display: flex;
+  border-radius: 30px;
+  border: 2px solid black;
+  background: $yellow-blast;
+  font-weight: 400;
+  color: black;
+  min-height: 20vh;
+  width: 100%;
+  box-shadow: 8px 4px 0px black;
+  font-family: 'Inter', sans-serif;
+  padding: 10px;
+  align-content: space-between;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+}
+
+.card-top {
+  display: flex;
+}
+
+.garage-info {
+  max-width: 70%;
+}
+
+.garage-info p {
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+
+.card-top h1 {
+  border-bottom: 1px solid black;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.user-avatar img{
+  width: 135px;
+  height: 135px;
+  border-radius: 50%;
+  border: 2px solid black;
+  margin: 0px 10px;
+  position:absolute;
+  right: 1%;
+  top: 1%;
+  z-index: 10;
+}
+
+.card-bottom {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+}
+
+.user-action {
+  display: flex;
+  margin: 30px 0px;
+  justify-content: space-between;
+}
+
+#user-description p {
+  margin-bottom: 0px;
+}
+
+.user-garage {
+  border-radius: 30px;
+  border: 2px solid black;
+  background: white;
+  font-weight: 400;
+  color: black;
+  height: 50vh;
+  width: 100%;
+  box-shadow: 8px 4px 0px black;
+}
+
+
+#user-notif {
+  display: flex;
+  position: absolute;
+  background-color: $yellow-blast;
+  border-radius: 50%;
+  border: 2px solid black;
+  box-shadow: 8px 4px 0px black;
+  right: 5%;
+  top: 1%;
+  z-index: 20;
+  height: 40px;
+  width: 40px;
+  justify-content: center;
+  align-items: center;
+}
