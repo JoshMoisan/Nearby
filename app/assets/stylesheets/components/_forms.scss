@@ -41,6 +41,7 @@
 }
 
 #new_item {
+  // id automatically created by form
   margin-top: 10%;
   margin-bottom: 30%;
 }
@@ -99,4 +100,27 @@
 .button-large-items:hover {
   box-shadow: none;
   border: 2px solid $yellow-blast;
+}
+
+
+.input-placement {
+  // edit users
+  margin-left: 7%;
+  margin-right: 15%;
+  margin-top: 0%;
+  width: 100%;
+
+}
+
+.edit-info {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.edit-info2 {
+  margin-left: 25%;
+  margin-right: 15%;
+  margin-top: 12%;
+
+
 }
