@@ -10,8 +10,14 @@ class Item < ApplicationRecord
   validates :category, inclusion: { in: CATEGORIES }
   validates :condition, inclusion: { in: CONDITION }
 
+  def user_location
+    user.address
+  end
+
   include PgSearch::Model
-  pg_search_scope :search_by,
+  pg_search_scope :search_by, associated_against: {
+                  user: :address
+                  },
                   against: %i[name category description],
                   using: { tsearch: { prefix: true } }
 end
