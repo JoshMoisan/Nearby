@@ -1,0 +1,26 @@
+.forms-container-style {
+  padding-top: 10%;
+  padding-left: 10%;
+  width: 100%;
+}
+
+.form-inputs {
+  width: 80%;
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 5%;
+}
+
+.required > input:focus, .email:focus, .password:focus {
+  color: #0E0000;
+  background-color: #F4F4F4;
+  border-color: #F6DB2D;
+  border-radius: 28px;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem #ffc65a;
+}
+
+.form-control {
+  border: 1px solid #F6DB2D;
+  border-radius: 28px;
+}
