@@ -1,0 +1,45 @@
+.sticky-search {
+  position: sticky;
+  top: 0;
+  padding-inline: 40px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sticky-search input {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.03);
+  border: none;
+  padding-inline-start: 9px;
+  padding-inline-end: 15%;
+  padding-left: 50px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  background-color: white;
+}
+
+.sticky-search input:hover {
+  outline: none;
+}
+
+.margin-search {
+  padding-left: 20px;
+  padding-right: 10%;
+  border-radius: 30px;
+}
+
+.icon-search {
+  font-weight: 900;
+  transform: scale(1.5);
+  position: absolute;
+}
+
+.icon-left {
+  margin-left: -230px;
+}
+
+.icon-right {
+  margin-left: 220px;
+}
