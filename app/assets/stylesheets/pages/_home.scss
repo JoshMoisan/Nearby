@@ -5,13 +5,13 @@ $soft-yellow: #FFF6BF;
 .yellow-rect {
   background: $yellow-blast;
   width: 100%;
-  height: 150vh;
+  height: 100vh;
 }
 
 .white-rect {
   background: white;
   width: 100%;
-  height: 150vh;
+  height: 100vh;
 }
 
 .yellow-circle {
@@ -20,7 +20,7 @@ $soft-yellow: #FFF6BF;
   height: 25%;
   width: 50%;
   position:absolute;
-  top: 137.5%;
+  top: 87.5%;
   right: 0px;
 }
 
@@ -30,7 +30,7 @@ $soft-yellow: #FFF6BF;
   height: 25%;
   width: 50%;
   position:absolute;
-  top: 137.5%;
+  top: 87.5%;
   left:0%;
 }
 
@@ -72,7 +72,7 @@ $soft-yellow: #FFF6BF;
 .anchor {
   position: absolute;
   left: 50%;
-  top:100%;
+  top:50%;
   width: 10px;
   height: 10px;
   // background: green;
