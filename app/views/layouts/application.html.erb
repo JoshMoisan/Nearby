@@ -21,9 +21,8 @@
   </head>
 
 
-  <body style="position: relative">
+  <body style="">
     <%= render "shared/flashes" %>
-
     <%= yield %>
     <%= render partial: "shared/navigation_bar" unless current_page?(home_path) || devise_controller? %>
   </body>
