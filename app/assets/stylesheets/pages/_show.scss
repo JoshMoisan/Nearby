@@ -69,6 +69,11 @@
 }
 
 .user-garage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-end;
+
   border-radius: 30px;
   border: 2px solid black;
   background: white;
@@ -94,4 +99,27 @@
   width: 40px;
   justify-content: center;
   align-items: center;
+}
+
+
+table {
+  width: 100%;
+  height: 100%;
+}
+
+th, td {
+  // border: 1px solid;
+  text-align: center;
+}
+
+.user-garage img {
+  width: 85%;
+}
+
+
+.box-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 33%;
 }

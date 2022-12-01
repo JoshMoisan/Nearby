@@ -6,12 +6,16 @@
         <i class="fa-solid fa-bell"></i>
       </div>
       <div class="garage-info">
-        <h1>My Garage</h1>
+        <% if @user = current_user %>
+          <h1>My Garage</h1>
+        <% else %>
+          <h1><%= @user.first_name %>'s Garage</h1>
+        <% end %>
         <p><strong>About me </strong><%= current_user.description %></p>
       </div>
 
       <div class="user-avatar">
-        <img src="<%= current_user.profile_picture %>">
+        <img src="<%= @user.profile_picture %>">
       </div>
     </div>
     <div class="card-bottom">
@@ -29,20 +33,64 @@
   </div>
 
   <div class="user-action">
-    <%= link_to "MY REVIEWS", "#", class: "button-large" %>
-    <%= link_to "UPDATE", "#", class: "button-large" %>
+    <% if @user != current_user %>
+      <%= link_to "REVIEW", "#", class: "button-large" %>
+      <%= link_to "CHAT", "#", class: "button-large"  %>
+    <% else %>
+      <%= link_to "MY REVIEWS", "#", class: "button-large" %>
+      <%= link_to "UPDATE", edit_user_registration_path(@user), class: "button-large" %>
+      <% end %>
   </div>
 
-  <div class="user-garage", style= 'background-image: url(<%= image_url("dot.jpeg")%>); background-size: 375px; '>
-    <tr>
-      <th>Add</th>
-      <th>Icon</th>
-      <th>Here</th>
-    </tr>
-  </div>
+  <div class="user-garage", style= 'background-image: url(<%= image_url("dotgrid.jpg")%>); background-size: 375px; '>
+        <div class="box-box">
+          <img src="<%= image_url("tools.png")%>">
+          <p>Tools</p>
+        </div>
+        <div class="box-box">
+          <img src="<%= image_url("sports.png")%>">
+          <p>Sports</p>
+        </div>
 
+        <div class="box-box">
+          <img src="<%= image_url("shovel.png")%>">
+          <p>Garden</p>
+        </div>
 
+        <div class="box-box">
+          <img src="<%= image_url("plug.png")%>" >
+          <p>Electronics</p>
+        </div>
+
+        <div class="box-box">
+          <img src="<%= image_url("painter.png")%>">
+          <p>Decoration</p>
+        </div>
+
+        <div class="box-box">
+          <img src="<%= image_url("console.png")%>">
+          <p>Gaming</p>
+        </div>
+
+        <div class="box-box">
+          <img src="<%= image_url("camping.png")%>">
+          <p>Camping</p>
+        </div>
+
+        <div class="box-box">
+          <img src="<%= image_url("plantes-dinterieur.png")%>">
+          <p>Decoration</p>
+        </div>
+
+        <div class="box-box">
+          <img src="<%= image_url("ajouter.png")%>">
+          <p>Other</p>
+        </div>
+
+      </div>
   <div class="user-review">
+
+<%# Tools Electronics Gaming Arts\ &\ Crafts Garden Decoration Sports Camping Other %>
 
   </div>
 </div>
