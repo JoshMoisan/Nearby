@@ -42,7 +42,6 @@ $soft-yellow: #FFF6BF;
   padding: 5px 15px ;
   width: 150px;
   box-shadow: 8px 4px 0px black;
-  font-family: 'Inter', sans-serif;
   text-align: center;
 }
 
@@ -70,9 +69,9 @@ $soft-yellow: #FFF6BF;
   background: $yellow-blast;
   font-weight: 400;
   color: black;
-  padding: 5px 15px ;
+  width: 300px;
+  height: 300px;
   box-shadow: 8px 4px 0px black;
-  font-family: 'Inter', sans-serif;
   text-align: center;
 }
 
@@ -84,6 +83,4 @@ $soft-yellow: #FFF6BF;
 .button-round a {
   text-decoration: none;
   color: black;
-  font-family: 'Inter', sans-serif;
-
 }
