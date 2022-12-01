@@ -46,15 +46,17 @@ $soft-yellow: #FFF6BF;
   text-align: center;
 }
 
+
 .button-large:hover {
   box-shadow: none;
-  border: 2px solid $yellow-blast
+  border: 2px solid $yellow-blast;
 }
 
 .button-large a {
   text-decoration: none;
   color: black;
   font-family: 'Inter', sans-serif;
+
 }
 
 
@@ -76,11 +78,12 @@ $soft-yellow: #FFF6BF;
 
 .button-round:hover {
   box-shadow: none;
-  border: 2px solid $yellow-blast
+  border: 2px solid $yellow-blast;
 }
 
 .button-round a {
   text-decoration: none;
   color: black;
   font-family: 'Inter', sans-serif;
+
 }

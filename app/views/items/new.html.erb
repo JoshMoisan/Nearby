@@ -4,13 +4,12 @@
   <div class= "form-text">
     <%= f.input :name, input_html: {class: "input-items"}%>
     <%= f.input :category, collection: Item::CATEGORIES, input_html:{class: "input-items"}%>
-    <%= f.input :description, input_html: {class: "input-items"}%>
     <%= f.input :condition, collection: Item::CONDITION, input_html:{class: "input-items"}%>
     <%= f.input :price, input_html: {class: "input-items"}%>
-    <%= f.input :photo, as: :file, input_html: {class: "input-photo"}%>
+     <%= f.input :description, input_html: {class: "input-items"}%>
+     <%= f.input :photo, as: :file, input_html: {class: "input-photo"}%>
   </div>
   <div>
-    <%= f.button :submit, class: "" %>
+    <%= f.button :submit, :"Add your item!", {class:"button-large-items"} %>
   </div>
 <% end %>
-</div>

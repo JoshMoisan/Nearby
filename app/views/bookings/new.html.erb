@@ -1,11 +1,10 @@
-  <div>
-    <h1>New Booking</h1>
-  </div>
+<h1 class=h1-booking-form> New Booking</h1>
+<%= simple_form_for [@item, @booking] do |f| %>
+
   <div class= "form-text-booking">
-    <%= simple_form_for [@item, @booking] do |f| %>
-      <%= f.input :start_date, as: :date, required: true, input_html: {class: "input-booking"} %>
-      <%= f.input :end_date, as: :date, required: true, input_html: {class: "input-booking"} %>
-      <%= f.submit "Request to book" %>
+      <%= f.input :start_date, as: :date, required: true, input_html: {class: "input-bookings"} %>
+      <%= f.input :end_date, as: :date, required: true, input_html: {class: "input-bookings"} %>
+      <%= f.submit "Request to book", {class: "button-large"} %>
     <% end %>
   </div>
 
