@@ -1,2 +1,48 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+  <div class="top-right-text">
+    <h4>Swipe <strong>UP</strong> to <strong>LEND</strong></h4>
+  </div>
+  <div class="bottom-left-text">
+    <h4>Swipe <strong>DOWN</strong> to <strong>BORROW</strong></h4>
+  </div>
+
+<div data-controller="drag-home">
+  <div class="main"  >
+    <h1>NEARBY</h1>
+
+
+    <div class="white-circle" >
+    </div>
+
+    <div class="yellow-circle">
+    </div>
+
+    <div class="anchor" data-drag-home-target="dragging">
+    </div>
+
+    <div class="yellow-rect">
+    </div>
+
+    <div class="white-rect">
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+  window.onscroll = function(ev) {
+
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      setTimeout(function() {
+          location.href = "https://www.youtube.com/results?search_query=land+in+the+middle+of+a+webpage";
+      }, 100)
+    }
+
+    else if ((window.scrollY) === 0) {
+      setTimeout(function() {
+          location.href = "https://www.youtube.com/results?search_query=land+in+the+middle+of+a+webpage";
+      }, 100)
+    }
+  };
+</script>
