@@ -1,13 +1,13 @@
-
+<h1 class=h1-item-form> Register your items here! </h1>
 <%= simple_form_for [@user,@item] do |f| %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :category, collection: Item::CATEGORIES %>
-    <%= f.input :description %>
-    <%= f.input :condition, collection: Item::CONDITION %>
-    <%= f.input :price %>
-    <%= f.input :photo, as: :file %>
+  <div class= "form-text">
+    <%= f.input :name, input_html: {class: "input-items"}%>
+    <%= f.input :category, collection: Item::CATEGORIES, input_html:{class: "input-items"}%>
+    <%= f.input :description, input_html: {class: "input-items"}%>
+    <%= f.input :condition, collection: Item::CONDITION, input_html:{class: "input-items"}%>
+    <%= f.input :price, input_html: {class: "input-items"}%>
+    <%= f.input :photo, as: :file, input_html: {class: "input-photo"}%>
   </div>
   <div>
     <%= f.button :submit, class: "" %>
