@@ -1,8 +1,12 @@
+// items:
 
 .h1-item-form {
-  margin-left: 10%;
-  margin-top: 8%;
-  margin-bottom: 10%;
+  margin-left: 8%;
+  margin-top: 15%;
+  margin-bottom: 5%;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  padding: 10px, 10px;
 }
 
 
@@ -10,22 +14,74 @@
   color: black;
   margin-left: 15%;
   margin-right: 15%;
+  margin-top: 10%;
+  font-family: 'Open Sans', sans-serif;
 }
-
 
 
 .input-items {
   border-radius: 20px;
   background-color: #FFF6BF;
   margin-top: 0%;
+  margin-bottom: 5%;
+  border: 2px solid black;
+
+}
+
+
+.input-photo {
+  // items photo
+  border-radius: 20px;
+  background-color: #FFF6BF;
+  border: 2px solid black;
+}
+
+
+
+// bookings:
+
+.input-bookings {
+
+  border-radius: 20px;
+  background-color: #FFF6BF;
+  margin-top: 0%;
+  margin-bottom: 10%;
+  border: 2px solid black;
+
+}
+
+.form-text-booking {
+  color: black;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 12%;
+
+}
+
+
+.h1-booking-form {
+  margin-left: 28%;
+  margin-top: 25%;
   margin-bottom: 10%;
 
 }
 
 
 
-.input-photo {
-  border-radius: 20px;
-  background-color: #FFF6BF;
-
+.button-large-items {
+  transition: 250ms ease-in-out;
+  border-radius: 60px;
+  border: 2px solid black;
+  background: $yellow-blast;
+  font-weight: 400;
+  color: black;
+  padding: 5px 15px ;
+  width: 150px;
+  box-shadow: 8px 4px 0px black;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 0%;
+  margin-left: 30%;
+  margin-right: 15%;
 }

@@ -6,9 +6,18 @@
 // External libraries
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
+@import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/show";
 @import "components/forms";
 
+
+
+
+
+h1, h2 ,h3 ,h4 ,h5 ,p ,a {
+  font-family: 'Inter', sans-serif;
+}

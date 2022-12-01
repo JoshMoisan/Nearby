@@ -1,2 +1,48 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="show-content", style= 'background-image: url(<%= image_url("Background.jpg")%>);background-size: 900px;'>
+
+  <div class="head-card">
+    <div class="card-top">
+      <div id="user-notif">
+        <i class="fa-solid fa-bell"></i>
+      </div>
+      <div class="garage-info">
+        <h1>My Garage</h1>
+        <p><strong>About me </strong><%= current_user.description %></p>
+      </div>
+
+      <div class="user-avatar">
+        <img src="<%= current_user.profile_picture %>">
+      </div>
+    </div>
+    <div class="card-bottom">
+      <div class="user-rating">
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+      </div>
+      <div id="user-description">
+        <p><strong><%= current_user.first_name %> <%= current_user.last_name %></strong></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="user-action">
+    <%= link_to "MY REVIEWS", "#", class: "button-large" %>
+    <%= link_to "UPDATE", "#", class: "button-large" %>
+  </div>
+
+  <div class="user-garage", style= 'background-image: url(<%= image_url("dot.jpeg")%>); background-size: 375px; '>
+    <tr>
+      <th>Add</th>
+      <th>Icon</th>
+      <th>Here</th>
+    </tr>
+  </div>
+
+
+  <div class="user-review">
+
+  </div>
+</div>

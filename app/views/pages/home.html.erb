@@ -33,16 +33,21 @@
 <script>
   window.onscroll = function(ev) {
 
+    // REDIRECT TO USER'S PROFILE
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
       setTimeout(function() {
-          location.href = "https://www.youtube.com/results?search_query=land+in+the+middle+of+a+webpage";
-      }, 100)
-    }
-
-    else if ((window.scrollY) === 0) {
+        if ("<%= user_signed_in? %>") {
+          window.location.replace("<%= user_path(current_user) %>");
+        } else  {
+          window.location.replace("<%= new_user_session_path %>");
+        }}, 0)
+      }
+       // REDIRECT TO SEARCH (INDEX)
+     else if ((window.scrollY) === 0) {
       setTimeout(function() {
-          location.href = "https://www.youtube.com/results?search_query=land+in+the+middle+of+a+webpage";
-      }, 100)
-    }
+          window.location.replace("<%= items_path %>");
+      }, 0)
+     }
   };
+
 </script>
