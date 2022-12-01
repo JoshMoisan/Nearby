@@ -2,7 +2,11 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = Item.all
+    if params[:query].present?
+      @items = Item.search_by(params[:query])
+    else
+      @items = Item.all
+    end
   end
 
   def show
@@ -11,6 +15,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @user = current_user
   end
 
   def create
