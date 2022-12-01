@@ -1,6 +1,6 @@
-<h1 class=h1-item-form> Register your items here! </h1>
-<%= simple_form_for [@user,@item] do |f| %>
-
+<div class="new-item-container">
+  <h1 class=h1-item-form> Register your items here! </h1>
+  <%= simple_form_for [@user,@item] do |f| %>
   <div class= "form-text">
     <%= f.input :name, input_html: {class: "input-items"}%>
     <%= f.input :category, collection: Item::CATEGORIES, input_html:{class: "input-items"}%>
