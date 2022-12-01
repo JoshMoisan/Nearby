@@ -10,7 +10,7 @@
     <%= javascript_include_tag "/assets/application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
+  <body style="position: relative">
     <%= render "shared/flashes" %>
     <%= yield %>
     <%= render partial: "shared/navigation_bar" unless current_page?(home_path) || devise_controller? %>
