@@ -2,12 +2,7 @@
 
 .h1-item-form {
   margin-left: 8%;
-  margin-top: 15%;
-  margin-bottom: 5%;
-  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
-  padding: 30px, 30px;
-
 }
 
 
@@ -15,8 +10,8 @@
   color: black;
   margin-left: 15%;
   margin-right: 15%;
-  margin-top: 5%;
-  font-family: 'Open Sans', sans-serif;
+  margin-top: 0%;
+  margin-bottom: 0;
 }
 
 
@@ -27,8 +22,6 @@
   margin-bottom: 5%;
   border: 2px solid black;
   height: 40px;
-
-
 }
 
 
@@ -40,14 +33,20 @@
 
 }
 
-#new_item {
-  margin-top: 10%;
-  margin-bottom: 30%;
+
+// #new_item {
+//   margin-top: 20%;
+
+
+
+// }
+
+
+.new-item-container h1 {
+  padding-top: 15%;
+  margin-bottom: 0;
 }
 
-
-
-// bookings:
 
 .input-bookings {
 
@@ -64,17 +63,17 @@
   margin-left: 15%;
   margin-right: 15%;
   margin-top: 12%;
+  padding-bottom: 150px;
 
 }
 
 
 .h1-booking-form {
   margin-left: 28%;
-  margin-top: 25%;
-  margin-bottom: 10%;
+  // margin-top: 25%;
+  // margin-bottom: 10%;
 
 }
-
 
 
 .button-large-items {
@@ -84,19 +83,29 @@
   background: $yellow-blast;
   font-weight: 400;
   color: black;
-  padding: 5px 15px ;
+  padding: 5px 15px;
   width: 150px;
   box-shadow: 8px 4px 0px black;
   font-family: 'Inter', sans-serif;
   text-align: center;
-  margin-top: 10%;
-  margin-bottom: 0%;
-  margin-left: 30%;
-  margin-right: 15%;
+  // margin-top: 10%;
+  // margin-bottom: 0%;
+  // margin-left: 30%;
+  // margin-right: 15%;
 }
 
 
 .button-large-items:hover {
   box-shadow: none;
   border: 2px solid $yellow-blast;
+}
+
+
+.new-booking-content h1 {
+  padding-top: 15%;
+
+}
+
+.new-booking-content .button-large  {
+  margin-left: 45%;
 }

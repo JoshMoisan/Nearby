@@ -1,15 +1,19 @@
-<div class="new-item-container">
-  <h1 class=h1-item-form> Register your items here! </h1>
-  <%= simple_form_for [@user,@item] do |f| %>
-  <div class= "form-text">
-    <%= f.input :name, input_html: {class: "input-items"}%>
-    <%= f.input :category, collection: Item::CATEGORIES, input_html:{class: "input-items"}%>
-    <%= f.input :condition, collection: Item::CONDITION, input_html:{class: "input-items"}%>
-    <%= f.input :price, input_html: {class: "input-items"}%>
-    <%= f.input :description, input_html: {class: "input-items"}%>
-    <%= f.input :photo, as: :file, input_html: {class: "input-photo"}%>
+<div class="form-bg">
+  <div class="forms-container-style">
+    <h2 style="margin-left: 40px;">Add your item</h2>
+
+    <%= simple_form_for [@user,@item] do |f| %>
+    <div class= "form-inputs">
+      <%= f.input :name, label: false, placeholder: "Name *"%>
+      <%= f.input :category, collection: Item::CATEGORIES%>
+      <%= f.input :condition, collection: Item::CONDITION %>
+      <%= f.input :price, label: false, placeholder: "Price *" %>
+      <%= f.input :description, label: false, placeholder: "Description *"%>
+      <%= f.input :photo, as: :file, label: false, placeholder: "Photo *" %>
+    </div>
+    <div class="form-actions" style="margin-left: 8vh;">
+      <%= f.button :submit, :"Add", {class:"button-large-items"} %>
+    </div>
+  <% end %>
   </div>
-  <div>
-    <%= f.button :submit, :"Add your item!", {class:"button-large-items"} %>
-  </div>
-<% end %>
+</div>

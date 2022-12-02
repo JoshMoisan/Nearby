@@ -1,55 +1,57 @@
-<div class="forms-container-style">
-  <h2>Sign up</h2>
+<div class="form-bg">
+  <div class="forms-container-style" style="padding-top: 40px; padding-bottom: 60px;">
+    <h2 style="margin-left: 40px;">Sign up</h2>
 
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
-    <%= f.error_notification %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
+      <%= f.error_notification %>
 
-    <div class="form-inputs">
-      <%= f.input :username,
-                  placeholder: 'Pick a username',
-                  autofocus: false,
-                  label: false,
-                  input_html: { autocomplete: "email" }%>
-      <%= f.input :first_name,
-                  placeholder: 'Name',
-                  required: true,
-                  autofocus: true,
-                  label: false,
-                  input_html: { autocomplete: "email" }%>
-      <%= f.input :last_name,
-                  placeholder: 'Last name',
-                  required: true,
-                  autofocus: true,
-                  label: false,
-                  input_html: { autocomplete: "email" }%>
-      <%= f.input :address,
-                  placeholder: 'Address',
-                  autofocus: true,
-                  label: false,
-                  input_html: { autocomplete: "email" }%>
-      <%= f.input :email,
-                  placeholder: 'Email',
-                  required: true,
-                  autofocus: true,
-                  label: false,
-                  input_html: { autocomplete: "email" }%>
-      <%= f.input :password,
-                  placeholder: 'Set your password',
-                  label: false,
-                  required: true,
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                  placeholder: 'Repeat your password',
-                  label: false,
-                  required: true,
-                  input_html: { autocomplete: "new-password" } %>
-    </div>
+      <div class="form-inputs">
+        <%= f.input :username,
+                    placeholder: 'Pick a username',
+                    autofocus: false,
+                    label: false,
+                    input_html: { autocomplete: "email" }%>
+        <%= f.input :first_name,
+                    placeholder: 'Name',
+                    required: true,
+                    autofocus: true,
+                    label: false,
+                    input_html: { autocomplete: "email" }%>
+        <%= f.input :last_name,
+                    placeholder: 'Last name',
+                    required: true,
+                    autofocus: true,
+                    label: false,
+                    input_html: { autocomplete: "email" }%>
+        <%= f.input :address,
+                    placeholder: 'Address',
+                    autofocus: true,
+                    label: false,
+                    input_html: { autocomplete: "email" }%>
+        <%= f.input :email,
+                    placeholder: 'Email',
+                    required: true,
+                    autofocus: true,
+                    label: false,
+                    input_html: { autocomplete: "email" }%>
+        <%= f.input :password,
+                    placeholder: 'Set your password',
+                    label: false,
+                    required: true,
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    placeholder: 'Repeat your password',
+                    label: false,
+                    required: true,
+                    input_html: { autocomplete: "new-password" } %>
+      </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Sign up" %>
-    </div>
-  <% end %>
+      <div class="form-actions">
+        <%= f.button :submit, "Sign up", class: "button-small" %>
+      </div>
+    <% end %>
 
-  <%= render "devise/shared/links" %>
+    <%= render "devise/shared/links" %>
+  </div>
 </div>
