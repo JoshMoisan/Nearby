@@ -1,0 +1,53 @@
+.image-size {
+  width: 100%;
+}
+
+.item-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-tokens {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.owner-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-card {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.user-picture{
+ justify-content: center;
+ align-self: center;
+}
+
+.user-information {
+  padding-left: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-message{
+  display :flex;
+  flex-direction: column;
+}
+
+.user-message h1{
+  align-self: center;
+  margin-bottom: 0px !important;
+}
+
+.stars{
+  margin-bottom: 0px !important;
+}
+
+.button-large.borrow {
+  margin-left: 50px;
+}
