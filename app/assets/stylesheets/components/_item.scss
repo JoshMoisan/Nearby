@@ -2,7 +2,7 @@
   width: 100%;
 }
 
-.item-card {
+.item-show-card {
   display: flex;
   justify-content: space-between;
 }
@@ -36,7 +36,8 @@
 
 .user-message{
   display :flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .user-message h1{
