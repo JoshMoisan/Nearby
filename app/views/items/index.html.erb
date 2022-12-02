@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <div class="container">
   <%= form_with url: items_path, method: :get, class: "sticky-search" do %>
   <i class="fa-solid fa-magnifying-glass icon-left icon-search"></i>
@@ -30,7 +30,7 @@
             data-map-markers-value="<%= @markers.to_json %>"
             data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-=======
+
 <div class="items-container">
   <%# search bar by items  %>
   <div class="container">
@@ -52,7 +52,7 @@
         <%# <span style="max-width: 70px"><%= item.description %>
         <img src='<%= "#{item.item_picture}" %>' style="width: 70px" alt='<%= "#{item.name}" %>'>
     <% end %>
->>>>>>> master
+
     </div>
   </div>
 
