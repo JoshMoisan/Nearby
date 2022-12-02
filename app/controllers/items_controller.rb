@@ -31,7 +31,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.user = current_user
     if @item.save
-      redirect_to item_path(@item), notice: 'This item was successfully created.'
+      redirect_to new_item_booking_path(@item), notice: 'This item was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
