@@ -1,17 +1,22 @@
 .items-container {
   background-color: #F6DB2D;
+  height: 100vh;
 }
 
 .item-container {
-  display: grid;
+  padding-bottom: 50px;
+  padding-left: 20px;
 }
 
 .item-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
-  max-width: 20px;
-  grid-template-rows: 80px auto 80px;
-  column-gap: 10px;
-  row-gap: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+}
+
+.text-color {
+  color: white;
+}
+
+.container {
+  padding-left: 0px;
 }
