@@ -7,8 +7,8 @@ class Item < ApplicationRecord
   CONDITION = %w[New Good Fair Poor]
   validates :name, :category, :condition, :description, :photo, :price, presence: true
   validates :description, length: { minimum: 15 }
-  validates :category, inclusion: { in: CATEGORIES }
-  validates :condition, inclusion: { in: CONDITION }
+  validates :category, inclusion: { in: Item::CATEGORIES }
+  validates :condition, inclusion: { in: Item::CONDITION }
 
   def user_location
     user.address
