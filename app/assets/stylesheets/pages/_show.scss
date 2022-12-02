@@ -71,8 +71,8 @@
 .user-garage {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: flex-end;
+  justify-content: center;
+  align-content: center;
 
   border-radius: 30px;
   border: 2px solid black;
@@ -113,7 +113,7 @@ th, td {
 }
 
 .user-garage img {
-  width: 85%;
+  width: 60%;
 }
 
 
