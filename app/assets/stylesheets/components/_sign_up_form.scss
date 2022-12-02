@@ -1,7 +1,23 @@
 .forms-container-style {
-  padding-top: 10%;
+  padding-top: 20%;
   padding-left: 10%;
+  padding-bottom: 30%;
   width: 100%;
+  background-color: white;
+  border-radius: 30px;
+  margin-bottom: 20%;
+  border: 2px solid black;
+  box-shadow: 8px 4px 0px black;
+}
+
+.form-bg {
+  background-color: #F6DB2D;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
 }
 
 .form-inputs {
@@ -17,7 +33,7 @@
   border-color: #F6DB2D;
   border-radius: 28px;
   outline: 0;
-  box-shadow: 0 0 0 0.25rem #ffc65a;
+  box-shadow: 0 0 0 0.25rem #F6DB2D;
 }
 
 .form-control {

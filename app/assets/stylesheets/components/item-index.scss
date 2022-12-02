@@ -1,0 +1,17 @@
+.items-container {
+  background-color: #F6DB2D;
+}
+
+.item-container {
+  display: grid;
+}
+
+.item-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  max-width: 20px;
+  grid-template-rows: 80px auto 80px;
+  column-gap: 10px;
+  row-gap: 15px;
+}
