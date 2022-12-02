@@ -11,6 +11,7 @@
         <% else %>
           <h1><%= @user.first_name %>'s Garage</h1>
         <% end %>
+
         <p><strong>About me </strong><%= current_user.description %></p>
         <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete} %>
 

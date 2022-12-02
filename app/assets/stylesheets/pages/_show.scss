@@ -14,10 +14,10 @@
   width: 100%;
   box-shadow: 8px 4px 0px black;
   font-family: 'Inter', sans-serif;
-  padding: 10px;
+  padding: 30px;
   align-content: space-between;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
+  flex-direction: column;
+
 }
 
 .card-top {
@@ -26,11 +26,13 @@
 
 .garage-info {
   max-width: 70%;
+
 }
 
 .garage-info p {
   margin-bottom: 0;
   font-size: 16px;
+  margin-bottom: 15%;
 }
 
 
@@ -56,6 +58,7 @@
   display: flex;
   flex-direction: column-reverse;
   align-items: flex-end;
+
 }
 
 .user-action {
@@ -67,6 +70,12 @@
 #user-description p {
   margin-bottom: 0px;
 }
+
+.user-rating{
+  padding: 0px;
+  margin-right: 0px;
+ }
+
 
 .user-garage {
   display: flex;
@@ -99,6 +108,7 @@
   width: 40px;
   justify-content: center;
   align-items: center;
+
 }
 
 

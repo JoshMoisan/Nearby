@@ -2,11 +2,9 @@
 
 .h1-item-form {
   margin-left: 8%;
-  margin-top: 15%;
-  margin-bottom: 5%;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
-  padding: 30px, 30px;
+
 
 }
 
@@ -15,7 +13,8 @@
   color: black;
   margin-left: 15%;
   margin-right: 15%;
-  margin-top: 5%;
+  margin-top: 0%;
+  margin-bottom: 0;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -27,8 +26,6 @@
   margin-bottom: 5%;
   border: 2px solid black;
   height: 40px;
-
-
 }
 
 
@@ -41,10 +38,20 @@
 }
 
 #new_item {
-  margin-top: 10%;
-  margin-bottom: 30%;
+  margin-top: 20%;
+
+
+
 }
 
+.new-item-container h1 {
+  padding-top: 15%;
+  margin-bottom: 0;
+}
+
+// .new-item-container {
+//   margin-bottom: 0%
+// }
 
 
 // bookings:
@@ -84,7 +91,7 @@
   background: $yellow-blast;
   font-weight: 400;
   color: black;
-  padding: 5px 15px ;
+  padding: 5px 15px;
   width: 150px;
   box-shadow: 8px 4px 0px black;
   font-family: 'Inter', sans-serif;
