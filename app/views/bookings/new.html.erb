@@ -1,11 +1,15 @@
-<h1 class=h1-booking-form> New Booking</h1>
-<%= simple_form_for [@item, @booking] do |f| %>
+<div class="new-booking-content" style= 'background-image: url(<%= image_url("Background.jpg")%>);background-size: 900px; height: 100vh;'>
 
-  <div class= "form-text-booking">
-      <%= f.input :start_date, as: :date, required: true, input_html: {class: "input-bookings"} %>
-      <%= f.input :end_date, as: :date, required: true, input_html: {class: "input-bookings"} %>
-      <%= f.submit "Request to book", {} %>
-    <% end %>
-  </div>
+  <h1 class=h1-booking-form> New Booking</h1>
+  <%= simple_form_for [@item, @booking] do |f| %>
+
+    <div class= "form-text-booking">
+        <%= f.input :start_date, as: :date, required: true, input_html: {class: "input-bookings"} %>
+        <%= f.input :end_date, as: :date, required: true, input_html: {class: "input-bookings"} %>
+        <%= f.submit "Request to book", {class: "button-large"} %>
+      <% end %>
+    </div>
+</div>
+
 
 <%# implement booking/price logic %>
