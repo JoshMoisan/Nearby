@@ -35,11 +35,10 @@
     // REDIRECT TO USER'S PROFILE
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
       setTimeout(function() {
-        if ("<%= user_signed_in? %>") {
-          window.location.replace("<%= user_path(current_user) %>");
-        } else  {
-          window.location.replace("<%= new_user_session_path %>");
-        }}, 0)
+        console.log("allo")
+          window.location.replace("<%= user_signed_in? ? user_path(current_user) : new_user_session_path %>");
+
+        }, 0)
       }
        // REDIRECT TO SEARCH (INDEX)
      else if ((window.scrollY) === 0) {
