@@ -1,6 +1,6 @@
 <div class="form-bg">
-  <div class="forms-container-style">
-    <h2>Log in</h2>
+  <div class="forms-container-style" style="padding-top: 60px; padding-bottom: 60px;">
+    <h2 style="margin-left: 40px;">Log in</h2>
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
       <div class="form-inputs">
         <%= f.input :email,

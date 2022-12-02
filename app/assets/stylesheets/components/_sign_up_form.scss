@@ -1,7 +1,7 @@
 .forms-container-style {
-  padding-top: 20%;
-  padding-left: 10%;
-  padding-bottom: 30%;
+  padding-top: 2vh;
+  padding-left: 1vh;
+  padding-bottom: 3vh;
   width: 100%;
   background-color: white;
   border-radius: 30px;
@@ -27,7 +27,7 @@
   padding-right: 5%;
 }
 
-.required > input:focus, .email:focus, .password:focus {
+.required > input:focus, .form-control:focus, .form-select:focus, .email:focus, .password:focus {
   color: #0E0000;
   background-color: #F4F4F4;
   border-color: #F6DB2D;
@@ -36,7 +36,7 @@
   box-shadow: 0 0 0 0.25rem #F6DB2D;
 }
 
-.form-control {
+.form-control, .form-select {
   border: 1px solid #F6DB2D;
   border-radius: 28px;
 }

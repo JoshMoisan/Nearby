@@ -1,6 +1,6 @@
 <div class="form-bg">
-  <div class="forms-container-style">
-    <h2>Sign up</h2>
+  <div class="forms-container-style" style="padding-top: 40px; padding-bottom: 60px;">
+    <h2 style="margin-left: 40px;">Sign up</h2>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
       <%= f.error_notification %>
