@@ -2,8 +2,8 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 3px;
   padding-inline: 40px;
   background-color: white;
   border-top-left-radius: 28px;
@@ -23,12 +23,12 @@
 }
 
 .bigger-icon {
-  transform: scale(180%);
+  transform: scale(150%);
 }
 
 .bg-btn-add {
-  width: 70px;
-  height: 70px;
+  width: 65px;
+  height: 65px;
   background-color: white;
   border-radius: 100px;
   display: flex;
@@ -40,8 +40,8 @@
 }
 
 .btn-add-item {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   background-color: #F6DB2D;
   border-radius: 100px;
   display: flex;
