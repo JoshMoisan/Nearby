@@ -1,11 +1,47 @@
-<h1 class=h1-booking-form> New Booking</h1>
-<%= simple_form_for [@item, @booking] do |f| %>
-
-  <div class= "form-text-booking">
-      <%= f.input :start_date, as: :date, required: true, input_html: {class: "input-bookings"} %>
-      <%= f.input :end_date, as: :date, required: true, input_html: {class: "input-bookings"} %>
-      <%= f.submit "Request to book", {} %>
+<div class="image-container">
+  <img src='<%= "#{@item.item_picture}" %>' class='image-size' alt='<%= "#{@item.name}" %>'>
+</div>
+<br>
+<div class="container">
+  <div class="item-card">
+    <div class="item-information">
+      <h1><%= @item.name %></h1>
+      <small><i><p>Condition: <%= @item.condition %></p></i></small>
+    </div>
+    <div class="item-tokens">
+      <h1><%= @item.price %> <i class="fa-solid fa-award"></i></h1>
+    </div>
+  </div>
+  <div class="item-description">
+    <small><p><%= @item.description %></p></small>
+  </div>
+  <div class="owner-card">
+    <div class="user-card">
+      <div class="user-picture">
+        <img src='<%= "#{@item.user.profile_picture}" %>' class='avatar' alt='<%= "#{@item.user.username}" %>'>
+      </div>
+      <div class="user-information">
+        <%= @item.user.first_name %> <%= @item.user.last_name %>
+        <p class="stars"><i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+        </p>
+      </div>
+    </div>
+    <div class="user-message">
+      <h1><i class="fa-regular fa-comment-dots"></i></h1>
+    </div>
+  </div>
+  <div>
+    <%= simple_form_for [@item, @booking] do |f| %>
+      <div class= "form-text-booking">
+        <%= f.input :start_date, as: :date, required: true, input_html: {class: "input-bookings"} %>
+        <%= f.input :end_date, as: :date, required: true, input_html: {class: "input-bookings"} %>
+        <%= f.submit "Borrow", { class: "button-large borrow" }%>
+      </div>
     <% end %>
   </div>
+</div>
 
-<%# implement booking/price logic %>

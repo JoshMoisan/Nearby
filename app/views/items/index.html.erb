@@ -1,3 +1,37 @@
+
+
+<div class="container">
+  <%= form_with url: items_path, method: :get, class: "sticky-search" do %>
+  <i class="fa-solid fa-magnifying-glass icon-left icon-search"></i>
+  <%= text_field_tag :query,
+      params[:query],
+      class: "margin-search",
+      placeholder: ""%>
+  <i class="fa-solid fa-list-ul icon-right icon-search"></i>
+
+
+
+  <% end %>
+
+  <div class="row justify-content-center">
+    <div class="col-sm-8 test-bg">
+      <div id="items">
+        <% @items.each do |item| %>
+            <h3><%= link_to item.name, new_item_booking_path(item.id) %></h3>
+            <%= item.condition %>
+            <%= item.description %>
+            <img src='<%= "#{item.item_picture}" %>' alt='<%= "#{item.name}" %>'>
+        <% end %>
+      </div>
+    </div>
+    <div class="map">
+      <div style="width: 100%; height: 600px;"
+            id="map"
+            data-controller="map"
+            data-map-markers-value="<%= @markers.to_json %>"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+
 <div class="items-container">
   <%# search bar by items  %>
   <div class="container">
@@ -19,6 +53,7 @@
         <%# <span style="max-width: 70px"><%= item.description %>
         <img src='<%= "#{item.item_picture}" %>' style="width: 70px" alt='<%= "#{item.name}" %>'>
     <% end %>
+
     </div>
   </div>
 
