@@ -40,10 +40,11 @@ class ItemsController < ApplicationController
   def edit
   end
 
+
   def update
     @item.user = current_user
     if @item.update(item_params)
-      redirect_to item_path(@item)
+      redirect_to item_path(@item), notice: "Successfully updated your item."
     else
       render :edit
     end
@@ -51,7 +52,7 @@ class ItemsController < ApplicationController
 
   def destroy
     if @item.destroy
-      redirect_to items_path(@item)
+      redirect_to items_path(@item), notice: "Successfully deleted your item."
     else
       render :index
     end
