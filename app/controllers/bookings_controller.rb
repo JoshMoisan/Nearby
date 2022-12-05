@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_item
   before_action :set_booking, only: %i[show update destroy]
 
+
   def index
     @bookings = current_user.bookings
   end
@@ -18,11 +19,12 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.item = @item
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to booking_path(@booking) , notice: "Successfully created a booking."
     else
       redirect_to item_path(@item)
     end
   end
+
 
   def update
     @booking.user = current_user
