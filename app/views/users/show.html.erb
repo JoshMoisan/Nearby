@@ -103,9 +103,19 @@
 
       </div>
     </div>
-  <div class="user-review">
-
-<%# Tools Electronics Gaming Arts\ &\ Crafts Garden Decoration Sports Camping Other %>
-
+  <div class="review-container">
+    <h2><strong>Reviews</strong></h2>
+    <% @items.each do |item| %>
+    <% item.reviews.each do |review| %>
+    <div class="review-info">
+      <p>
+      <span class="title-item-name"><%= link_to item.name, new_item_booking_path(item.id) %></span> <br>
+      <strong>Rating: </strong><%= "⭐" * review.rating %> <br>
+      <strong>Comment: </strong><%= review.comment %>
+      </p>
+    </div>
+    <% end %>
+    <% end %>
+    </div>
   </div>
 </div>

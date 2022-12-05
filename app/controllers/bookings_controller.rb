@@ -2,7 +2,6 @@ class BookingsController < ApplicationController
   before_action :set_item
   before_action :set_booking, only: %i[show update destroy]
 
-
   def index
     @bookings = current_user.bookings
   end
@@ -12,19 +11,23 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @item = Item.find(params[:item_id])
+
     @marker = [{
       lat: @item.user.latitude,
       lng: @item.user.longitude,
       info_window: render_to_string(partial: "items/info_window", locals: { item: @item })
     }]
+
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.item = @item
+    @booking.reviews = @review
     if @booking.save
-      redirect_to booking_path(@booking) , notice: "Successfully created a booking."
+      redirect_to booking_path(@booking), notice: "Successfully created a booking."
     else
       redirect_to item_path(@item)
     end

@@ -4,13 +4,15 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[show edit], shallow: true do
     resources :items do
-      resources :bookings, except: %i[edit]
+      resources :bookings, except: %i[edit] do
+        resources :review, only: %i[index new create]
+      end
     end
   end
 
-  resources :bookings, only: %i[] do
-    resources :reviews, only: %i[index new create]
-  end
+  # resources :bookings, only: %i[] do
+  #   resources :reviews, only: %i[index new create]
+  # end
 
   resources :reviews, only: %i[destroy]
   resources :items, only: %i[index]
