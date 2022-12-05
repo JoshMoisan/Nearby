@@ -18,8 +18,8 @@
   <div class="owner-card">
     <div class="user-card">
       <div class="user-picture">
-        <% if @user.photo.key %>
-          <%=cl_image_tag @user.photo.key, crop: :fit%>
+        <% if @item.user.photo.key %>
+          <%=cl_image_tag @item.user.photo.key, crop: :fit%>
         <% else %>
           <img src="https://png.pngtree.com/png-vector/20190114/ourlarge/pngtree-vector-avatar-icon-png-image_313572.jpg">
         <% end %>
