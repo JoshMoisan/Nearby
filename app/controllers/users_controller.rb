@@ -14,6 +14,10 @@ class UsersController < ApplicationController
 
   def show
     @current_user = User.find(params[:id])
+    # @review = current_user
+    @items = current_user.items
+    # @bookings = Booking.all
+    # @reviews = Booking.last.reviews
   end
 
   def edit
