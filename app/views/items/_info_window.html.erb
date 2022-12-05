@@ -1,0 +1,4 @@
+<h2><%= link_to "#{item.user.first_name}'s", user_path(item.user)%> 🏡</h2>
+<img src='<%= "#{item.item_picture}" %>' class='popup-image' alt='<%= "#{item.name}" %>'>
+<hr>
+<p>📍<%= item.user.address %></p>

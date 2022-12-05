@@ -13,28 +13,34 @@
         <% end %>
 
         <p><strong>About me </strong><%= current_user.description %></p>
-        <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete} %>
 
       </div>
 
       <div class="user-avatar">
-        <% if @user.profile_picture %>
-          <img src="<%= @user.profile_picture %>">
+        <% if @user.photo.key %>
+          <%=cl_image_tag @user.photo.key, crop: :fit%>
         <% else %>
           <img src="https://png.pngtree.com/png-vector/20190114/ourlarge/pngtree-vector-avatar-icon-png-image_313572.jpg">
         <% end %>
       </div>
     </div>
+
     <div class="card-bottom">
-      <div class="user-rating">
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-      </div>
-      <div id="user-description">
-        <p><strong><%= current_user.first_name %> <%= current_user.last_name %></strong></p>
+      <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "button-small" %>
+
+
+      <div class="card-bottom-half">
+        <div class="user-rating">
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <div id="user-description">
+          <p><strong><%= current_user.first_name %> <%= current_user.last_name %></strong></p>
+        </div>
+
       </div>
     </div>
   </div>

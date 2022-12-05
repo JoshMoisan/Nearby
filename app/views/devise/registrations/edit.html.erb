@@ -24,23 +24,29 @@
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
 
-        <%= f.input :password,
-                    hint: "Leave it blank if you don't want to change it",
-                    required: false,
-                    label: false,
-                    placeholder: "Create new password",
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
-                    required: false,
-                    label: false,
-                    placeholder: "Repeat password",
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :current_password,
-                    label: false,
-                    placeholder: "Type your current password *",
-                    hint: "We need your current password to confirm your changes",
-                    required: true,
-                    input_html: { autocomplete: "current-password" } %>
+          <%= f.input :description,
+                autofocus: true,
+                input_html: { autocomplete: "email" }%>
+    <%= f.input :password,
+                hint: "Leave it blank if you don't want to change it",
+                required: false,
+                label: false,
+                placeholder: "Create new password",
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :password_confirmation,
+                required: false,
+                label: false,
+                placeholder: "Repeat your new password",
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :current_password,
+                label: false,
+                placeholder: "Type your current password *",
+                hint: "We need your current password to confirm your changes",
+                required: true,
+                input_html: { autocomplete: "current-password" } %>
+    <%= f.input :photo, as: :file,
+                label: false,
+                placeholder: "Photo *" %>
       </div>
 
       <div class="form-actions">
@@ -53,5 +59,6 @@
     <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn-login" %>
     <%# <%= link_to "Back", :back %>
     </div>
+
   </div>
 </div>

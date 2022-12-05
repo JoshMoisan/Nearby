@@ -7,12 +7,11 @@ class ItemsController < ApplicationController
     else
       @items = Item.all
     end
-    users = @items.map(&:user)
-    @markers = users.uniq.map do |user|
+    @markers = @items.map do |item|
       {
-        lat: user.latitude,
-        lng: user.longitude,
-        info_window: render_to_string(partial: "users/info_window", locals: {user: user})
+        lat: item.user.latitude,
+        lng: item.user.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {item: item })
       }
     end
     @markers.compact
@@ -20,6 +19,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+
   end
 
   def new
@@ -31,7 +31,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.user = current_user
     if @item.save
-      redirect_to new_item_booking_path(@item), notice: "Successfully created an item."
+      redirect_to new_item_booking_path(@item), notice: "Successfully posted your item."
     else
       render :new, status: :unprocessable_entity
     end
@@ -40,10 +40,11 @@ class ItemsController < ApplicationController
   def edit
   end
 
+
   def update
     @item.user = current_user
     if @item.update(item_params)
-      redirect_to item_path(@item)
+      redirect_to item_path(@item), notice: "Successfully updated your item."
     else
       render :edit
     end
@@ -51,7 +52,7 @@ class ItemsController < ApplicationController
 
   def destroy
     if @item.destroy
-      redirect_to items_path(@item)
+      redirect_to items_path(@item), notice: "Successfully deleted your item."
     else
       render :index
     end

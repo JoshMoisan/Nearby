@@ -35,7 +35,7 @@
 .garage-info p {
   margin-bottom: 0;
   font-size: 16px;
-  margin-bottom: 15%;
+  margin-bottom: 0;
 }
 
 
@@ -59,9 +59,14 @@
 
 .card-bottom {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-bottom-half {
+  display: flex;
   flex-direction: column-reverse;
   align-items: flex-end;
-
 }
 
 .user-action {

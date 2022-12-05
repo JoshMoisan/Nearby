@@ -14,10 +14,19 @@ class UsersController < ApplicationController
 
   def show
     @current_user = User.find(params[:id])
+
     # @review = current_user
     @items = current_user.items
     # @bookings = Booking.all
     # @reviews = Booking.last.reviews
+
+    # CHAT
+    @chatroom = Chatroom.new
+    @message = Message.new
+    @chatroom_name = get_name(@user, @current_user)
+    @single_chatroom = Chatroom.where(name: @chatroom_name).first || Chatroom.create_private_room([@user, @current_user], @room_name)
+    @messages = @single_chatroom.messages
+
   end
 
   def edit
@@ -28,4 +37,10 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end
+
+  def get_name(user1, user2)
+    users = [user1, user2].sort
+    "private_#{users[0].id}_#{users[1].id}"
+  end
+
 end

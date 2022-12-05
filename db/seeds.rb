@@ -14,7 +14,7 @@ puts 'Destroying previous users and items 🌱'
 Booking.destroy_all
 Item.destroy_all
 User.destroy_all
-# Review.destroy_all
+
 
 puts 'Seeding db 🌱'
 

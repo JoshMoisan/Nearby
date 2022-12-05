@@ -12,6 +12,13 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @item = Item.find(params[:item_id])
+
+    @marker = [{
+      lat: @item.user.latitude,
+      lng: @item.user.longitude,
+      info_window: render_to_string(partial: "items/info_window", locals: { item: @item })
+    }]
+
   end
 
   def create
