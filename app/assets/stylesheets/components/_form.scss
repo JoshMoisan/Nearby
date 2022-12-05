@@ -1,5 +1,3 @@
-// items:
-
 .h1-item-form {
   margin-left: 8%;
   font-weight: 600;
@@ -108,4 +106,29 @@
 
 .new-booking-content .button-large  {
   margin-left: 45%;
+}
+
+
+.button-back {
+    transition: 250ms ease-in-out;
+    border-radius: 50px;
+    border: 2px solid black;
+    background: white;
+    font-weight: 400;
+    color: black;
+    padding: 5px 15px ;
+    width: 65px;
+    box-shadow: 8px 4px 0px black;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    font-weight:20px;
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 2%;
+
+}
+
+.button-back:hover {
+  box-shadow: none;
+  border: 2px solid $yellow-blast;
 }
