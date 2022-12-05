@@ -7,7 +7,7 @@
         <a href=<%=new_user_item_path(:user_id)%>><i class="fa-solid fa-plus" style="color: white"></i></a>
       </div>
     </div>
-    <a href=<%= chatroom_path(@chatroom) %>><i class="fa-solid fa-envelope bigger-icon"></i></a>
+    <a href=<%= home_path %>><i class="fa-solid fa-envelope bigger-icon"></i></a>
     <a href=<%= user_signed_in? ? user_path(current_user) : home_path %>><i class="fa-solid fa-user bigger-icon"></i></a>
   </div>
 </div>
