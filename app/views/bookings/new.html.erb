@@ -1,5 +1,5 @@
 <div class="image-container">
-  <img src='<%= "#{@item.item_picture}" %>' class='image-size' alt='<%= "#{@item.name}" %>'>
+  <%=cl_image_tag @item.photo.key, width: 300, height: 300,  crop: :fit %>
 </div>
 <br>
 <div class="container">
@@ -18,7 +18,11 @@
   <div class="owner-card">
     <div class="user-card">
       <div class="user-picture">
-        <img src='<%= "#{@item.user.profile_picture}" %>' class='avatar' alt='<%= "#{@item.user.username}" %>'>
+        <% if @item.user.photo.key %>
+          <%=cl_image_tag @item.user.photo.key, crop: :fit%>
+        <% else %>
+          <img src="https://png.pngtree.com/png-vector/20190114/ourlarge/pngtree-vector-avatar-icon-png-image_313572.jpg">
+        <% end %>
       </div>
       <div class="user-information">
         <%= @item.user.first_name %> <%= @item.user.last_name %>
