@@ -2,6 +2,13 @@
   width: 100%;
 }
 
+.image-container {
+  display: flex;
+  img {
+    width: 100%;
+  }
+}
+
 .container-item {
   padding: 4%;
 }
