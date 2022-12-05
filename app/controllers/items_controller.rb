@@ -7,6 +7,13 @@ class ItemsController < ApplicationController
     else
       @items = Item.all
     end
+
+    if params[:category].present?
+      @items = @items.where(category: params[:category])
+    else
+      @items = Item.all
+    end
+
     users = @items.map(&:user)
     @markers = users.uniq.map do |user|
       {
