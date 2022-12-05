@@ -1,0 +1,55 @@
+.form-actions {
+  width: 80%;
+  padding-top: 2.5%;
+  padding-left: 10%;
+  padding-right: 5%;
+  padding-bottom: 5%;
+}
+
+.button-small {
+  transition: 250ms ease-in-out;
+  border-radius: 50px;
+  border: 2px solid black;
+  background: #F6DB2D;
+  box-shadow: 8px 4px 0px black;
+  font-weight: 400;
+  color: black;
+  padding: 5px 15px ;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+}
+
+.btn-login {
+  color: black;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  padding: 7px 15px ;
+
+  margin-left: 10%;
+
+  border-radius: 50px;
+  border: 2px solid black;
+  box-shadow: 8px 4px 0px black;
+
+}
+
+.btn-link {
+  color: rgb(36, 36, 36);
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  margin-left: 10%;
+  text-decoration: none;
+}
+
+
+.form-bg-edit {
+  // background-color: #ededed;
+  background-color: #ffffff;
+  background-image:  linear-gradient(#a2a2a2 1.5px, transparent 1px), linear-gradient(to right, #a2a2a2 1.5px, #ffffff 1px);
+  background-size: 45px 45px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+}
