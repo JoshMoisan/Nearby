@@ -22,6 +22,8 @@
 
 
   <body>
+    <%= link_to "<", :back, {class:"button-back"}%>
+
     <%= render "shared/flashes" %>
     <%= yield %>
     <%= render partial: "shared/navigation_bar" unless current_page?(home_path)%>
