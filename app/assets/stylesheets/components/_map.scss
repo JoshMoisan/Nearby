@@ -1,13 +1,20 @@
 .mapboxgl-popup {
-  max-width: 200px;
-  min-width: 200px;
+  width: 200px;
+  height: 230px;
 }
 
 .mapboxgl-popup-content {
   text-align: center;
   font-family: "Inter", sans-serif;
+  border-radius: 15px;
 }
 
 .mapboxgl-ctrl-logo, .mapboxgl-ctrl-bottom-right {
   visibility: hidden;
+}
+
+.popup-image {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 15px;
 }
