@@ -6,7 +6,7 @@
       <li class="chat-list"><% @chatrooms.each do | chatroom |%>
         <div class="chat-box">
           <div class="chat-box-text">
-            <p><%= link_to chatroom.name, chatroom_path(chatroom) %> </p>
+            <h3><%= link_to chatroom.name, chatroom_path(chatroom) %> </h3>
           </div>
           <div class="chat-box-avatar">
             <% @other_user = chatroom.participants.find{|participant| participant.user != current_user} %>

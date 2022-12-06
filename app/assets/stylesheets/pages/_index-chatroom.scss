@@ -12,7 +12,12 @@ $soft-yellow: #FFF6BF;
 
 .chat-content h1 {
   font-weight: 700;
-  margin-bottom: 15%;
+  margin-bottom: 8%;
+  border: 2px solid black;
+  background: $yellow-blast;
+  box-shadow: 8px 4px 0px black;
+  border-radius: 60px;
+  text-align: center;
 }
 
 .chat ul {
@@ -23,14 +28,14 @@ $soft-yellow: #FFF6BF;
 
 .chat-box {
   display: flex;
-  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
+  flex-direction: row;
 
-  padding: 6% 5%;
+  padding: 2% 5%;
   border-radius: 60px;
   border: 2px solid black;
-  background: $yellow-blast;
+  background: white;
   box-shadow: 8px 4px 0px black;
   margin-top: 10%;
 }
