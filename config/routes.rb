@@ -17,6 +17,10 @@ Rails.application.routes.draw do
   resources :reviews, only: %i[destroy]
   resources :items, only: %i[index]
 
+  resources :users, only: :show do
+    resources :showtools, only: :show
+  end
+
 
   # CHAT
   resources :chatrooms, only: [:index, :show, :create] do
