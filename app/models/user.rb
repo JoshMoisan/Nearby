@@ -7,7 +7,7 @@ class User < ApplicationRecord
   geocoded_by :address
   has_many :messages
   has_one_attached :photo
-  has_many :participants
+  has_many :participants, dependent: :destroy
   has_many :chatrooms, through: :participants
   has_many :bookings
   has_many :items, dependent: :destroy

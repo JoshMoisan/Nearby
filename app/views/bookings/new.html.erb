@@ -1,5 +1,5 @@
 <div class="image-container">
-  <%= cl_image_tag @item.photo.key, :cloud_name => @item.item_picture, crop: :fit %>
+  <%= cl_image_tag @item.photo.key, crop: :fit %>
 </div>
 <div class="container" data-controller="pricing">
   <div class="container-item">
@@ -55,7 +55,7 @@
       <div class= "form-text-booking">
         <%= f.input :start_date, as: :date, required: true, input_html: {class: "input-bookings"} %>
         <%= f.input :amount_of_days, as: :integer, required: true, input_html: {class: "input-bookings", data: { pricing_target: "days", action: "change->pricing#pricePreview"}} %>
-        <%= f.submit "Borrow", { class: "button-large borrow" }%>
+        <%= f.submit "Borrow", { class: "button-yellow borrow", style: 'align: center;'}%>
       </div>
     <% end %>
   </div>
@@ -63,7 +63,6 @@
     <h2><strong>Reviews</strong></h2>
     <% @item.reviews.each do |review| %>
     <div class="review-info">
-      <hr>
       <p>
       <span class="title-item-name"><%= link_to @item.name, new_item_booking_path(@item.id) %></span> <br>
       <strong>Rating: </strong><%= "⭐" * review.rating %> <br>
