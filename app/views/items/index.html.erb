@@ -1,4 +1,4 @@
-<div class="container" style="background-color: #F6DB2D;">
+<div class="container">
   <%= form_with url: items_path, method: :get, class: "sticky-search" do %>
   <i class="fa-solid fa-magnifying-glass icon-left icon-search"></i>
   <%= text_field_tag :query,
@@ -7,14 +7,13 @@
       placeholder: ""%>
   <i class="fa-solid fa-list-ul icon-right icon-search"></i>
   <% end %>
-  <div class="map"
-       style="width: 100%; height: 700px;"
-       id="map"
-       data-controller="map"
-       data-map-markers-value="<%= @markers.to_json %>"
-       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div class="map-on-item-index">
+    <div class="map"
+        style="width: 100%; height: 700px;"
+        id="map"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
-
-  <hr>
-</div>
-
+  </div>
