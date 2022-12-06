@@ -25,7 +25,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.item = @item
-    @booking.reviews = @review
+    # @booking.reviews = @review
     if @booking.save
       redirect_to booking_path(@booking), notice: "Successfully created a booking."
     else
