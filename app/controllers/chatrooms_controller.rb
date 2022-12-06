@@ -11,7 +11,7 @@ class ChatroomsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
 
-    @chatroom = Chatroom.new
+    # @chatroom = Chatroom.new
     @chatroom_name = get_name(@user, current_user)
     @chatroom = Chatroom.where(name: @chatroom_name).first || Chatroom.create_private_room([@user, current_user], @chatroom_name)
     @messages = @chatroom.messages

@@ -1,0 +1,12 @@
+<% if @user == current_user %>
+  <h1><%= params[:category] %> from my Garage</h1>
+<% else %>
+  <h1><%= params[:category] %> from <%= @user.first_name %>'s Garage</h1>
+<% end %>
+
+
+
+
+<% @items.each do |item| %>
+  <%= item.name %>
+<% end %>
