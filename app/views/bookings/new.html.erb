@@ -1,14 +1,14 @@
 <div class="image-container">
   <%=cl_image_tag @item.photo.key, crop: :fit %>
 </div>
-<div class="container">
+<div class="container" data-controller="pricing">
   <div class="container-item">
     <div class="item-show-card">
       <div class="item-information">
         <h1><%= @item.name %></h1>
         <small><i><p>Condition: <%= @item.condition %></p></i></small>
       </div>
-      <div class="item-tokens">
+      <div class="item-tokens" data-pricing-target="price" data-price="<%= @item.price %>">
         <h1><%= @item.price %> <i class="fa-solid fa-award"></i></h1>
       </div>
     </div>
@@ -54,7 +54,7 @@
     <%= simple_form_for [@item, @booking] do |f| %>
       <div class= "form-text-booking">
         <%= f.input :start_date, as: :date, required: true, input_html: {class: "input-bookings"} %>
-        <%= f.input :end_date, as: :date, required: true, input_html: {class: "input-bookings"} %>
+        <%= f.input :amount_of_days, as: :integer, required: true, input_html: {class: "input-bookings", data: { pricing_target: "days", action: "change->pricing#pricePreview"}} %>
         <%= f.submit "Borrow", { class: "button-large borrow" }%>
       </div>
     <% end %>

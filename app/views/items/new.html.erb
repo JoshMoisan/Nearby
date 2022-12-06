@@ -7,7 +7,7 @@
       <%= f.input :name, label: false, placeholder: "Name *"%>
       <%= f.input :category, collection: Item::CATEGORIES%>
       <%= f.input :condition, collection: Item::CONDITION %>
-      <%= f.input :price, label: false, placeholder: "Price *" %>
+      <%= f.input :price, as: :select, collection: [ [5, '1€ - 5€'], [10, '6€ - 10€'], [20, '11€ - 20€'], [50, '21€ - 50€'], [100, '5€ - 100€'], [150, '+ 100€'] ], label_method: :second, value_method: :first, placeholder: "Price *" %>
       <%= f.input :description, label: false, placeholder: "Description *"%>
       <%= f.input :photo, as: :file, label: false, placeholder: "Photo *" %>
     </div>
