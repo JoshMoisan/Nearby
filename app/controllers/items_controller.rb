@@ -8,12 +8,6 @@ class ItemsController < ApplicationController
       @items = Item.all
     end
 
-    if params[:category].present?
-      @items = @items.where(category: params[:category])
-    else
-      @items = Item.all
-    end
-
     users = @items.map(&:user)
     @markers = users.uniq.map do |user|
       {
@@ -47,7 +41,6 @@ class ItemsController < ApplicationController
   def edit
   end
 
-
   def update
     @item.user = current_user
     if @item.update(item_params)
@@ -65,6 +58,7 @@ class ItemsController < ApplicationController
     end
   end
 
+  
   private
 
   def set_item
