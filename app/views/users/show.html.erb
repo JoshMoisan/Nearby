@@ -52,7 +52,7 @@
   <div class="user-action">
     <% if @user != current_user %>
       <%= link_to "REVIEW", "#", class: "button-yellow" %>
-      <%= link_to "CHAT", chatroom_path(@user), class: "button-yellow"  %>
+      <%= link_to "CHAT", (@chatroom.present? ? chatroom_path(@chatroom) : chatrooms_path(user_id:params[:id])) , class: "button-yellow", data:{turbo_method: (@chatroom.present? ? :get : :post)}   %>
     <% else %>
       <%= link_to "MY REVIEWS", "#", class: "button-yellow" %>
       <%= link_to "UPDATE", edit_user_registration_path(@user), class: "button-yellow" %>
