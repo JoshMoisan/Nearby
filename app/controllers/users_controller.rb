@@ -36,6 +36,15 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def showtool
+    if params[:category].present?
+      @items = @items.where(category: params[:category])
+    else
+      @items = Item.all
+    end
+  end
+
+
   private
 
   def set_user
@@ -46,5 +55,4 @@ class UsersController < ApplicationController
     users = [user1, user2]
     "Chat with #{users[0].username}"
   end
-
 end
