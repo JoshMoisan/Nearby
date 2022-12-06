@@ -1,0 +1,12 @@
+<h2><%= link_to "#{item.user.first_name}'s", user_path(item.user)%> 🏡</h2>
+<hr>
+<a href=<%=new_item_booking_path(item.id)%>>
+  <h5><%= item.name %></h5>
+  <img src='<%= "#{item.item_picture}" %>' class='popup-image' alt='<%= "#{item.name}" %>'>
+  <div class="map-item-info" style="margin-bottom: 0;">
+    <p style="margin-bottom: 0;">Condition: <%= item.condition %></p>
+    <p style="margin-bottom: 0;"><%= item.price %> <i class="fa-solid fa-award" style="line-height: inherit;"></i></p>
+  </div>
+</a>
+<hr>
+<p>📍<%= item.user.address %></p>

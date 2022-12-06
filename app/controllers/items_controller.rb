@@ -8,12 +8,23 @@ class ItemsController < ApplicationController
       @items = Item.all
     end
 
-    users = @items.map(&:user)
-    @markers = users.uniq.map do |user|
+
+
+    if params[:category].present?
+      @items = @items.where(category: params[:category])
+    else
+      @items = Item.all
+    end
+
+
+
+    @markers = @items.map do |item|
+
+
       {
-        lat: user.latitude,
-        lng: user.longitude,
-        info_window: render_to_string(partial: "users/info_window", locals: {user: user})
+        lat: item.user.latitude,
+        lng: item.user.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {item: item })
       }
     end
     @markers.compact
@@ -21,6 +32,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+
   end
 
   def new

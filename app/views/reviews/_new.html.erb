@@ -1,0 +1,15 @@
+<div class="form-bg">
+  <div class="forms-container-style">
+    <h2 style="margin-left: 40px;">Add your item</h2>
+
+    <%= simple_form_for [@booking, @review] do |f| %>
+    <div class= "form-inputs">
+        <%= f.input :comment %>
+        <%= f.input :rating, collection: 0..5 %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, :"Add review", {class:"button-large-items"} %>
+    </div>
+  <% end %>
+  </div>
+</div>
