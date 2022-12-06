@@ -13,6 +13,10 @@ class UsersController < ApplicationController
   end
 
   def show
+
+    @chatroom_name = get_name(@user, current_user)
+    @chatroom = Chatroom.where(name: @chatroom_name).first
+
     @current_user = User.find(params[:id])
 
     # @review = current_user
@@ -39,8 +43,8 @@ class UsersController < ApplicationController
   end
 
   def get_name(user1, user2)
-    users = [user1, user2].sort
-    "private_#{users[0].id}_#{users[1].id}"
+    users = [user1, user2]
+    "Chat with #{users[0].username}"
   end
 
 end
