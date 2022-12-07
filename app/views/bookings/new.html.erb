@@ -9,7 +9,7 @@
         <small><i><p>Condition: <%= @item.condition %></p></i></small>
       </div>
       <div class="item-tokens" data-pricing-target="price" data-price="<%= @item.price %>">
-        <h1><%= @item.price %> <i class="fa-solid fa-award"></i></h1>
+        <h1><%= @item.price %> <i class="fa-solid fa-coins"></i></h1>
       </div>
     </div>
     <div class="item-description">
@@ -18,11 +18,13 @@
     <div class="owner-card">
       <div class="user-card">
         <div class="user-picture">
-          <% if @item.user.photo.key %>
-          <%= cl_image_tag @item.user.photo.key, {class: "avatar", crop: :fit}%>
-          <% else %>
-            <img src="https://png.pngtree.com/png-vector/20190114/ourlarge/pngtree-vector-avatar-icon-png-image_313572.jpg" class='avatar'>
-          <% end %>
+          <a href=<%= user_path(@item.user.id) %>>
+            <% if @item.user.photo.key %>
+            <%= cl_image_tag @item.user.photo.key, {class: "avatar", crop: :fit}%>
+            <% else %>
+              <img src="https://png.pngtree.com/png-vector/20190114/ourlarge/pngtree-vector-avatar-icon-png-image_313572.jpg" class='avatar'>
+            <% end %>
+          </a>
         </div>
         <div class="user-information">
           <%= @item.user.first_name %> <%= @item.user.last_name %>
@@ -54,22 +56,31 @@
     <%= simple_form_for [@item, @booking] do |f| %>
       <div class= "form-text-booking">
         <%= f.input :start_date, as: :date, required: true, input_html: {class: "input-bookings"} %>
-        <%= f.input :amount_of_days, as: :integer, required: true, input_html: {class: "input-bookings", data: { pricing_target: "days", action: "change->pricing#pricePreview"}} %>
+        <%= f.input :amount_of_days, as: :integer, required: true, placeholder: 'e.g. 2', input_html: {class: "input-bookings", data: { pricing_target: "days", action: "change->pricing#pricePreview"}} %>
+        <div class="booking-preview">
+          <span data-pricing-target="total"></span>
+        </div>
+        <div class="booking-button">
         <%= f.submit "Borrow", { class: "button-yellow borrow", style: 'align: center;'}%>
+        </div>
       </div>
     <% end %>
   </div>
 <div class="review-container" style="margin: 15px;">
-    <h2><strong>Reviews</strong></h2>
-    <% @item.reviews.each do |review| %>
-    <div class="review-info">
-      <p>
-      <span class="title-item-name"><%= link_to @item.name, new_item_booking_path(@item.id) %></span> <br>
-      <strong>Rating: </strong><%= "⭐" * review.rating %> <br>
-      <strong>Comment: </strong><%= review.comment %>
-      <hr>
-      </p>
-    </div>
+  <h2><strong>Reviews</strong></h2>
+    <% if @item.reviews.present? %>
+      <% @item.reviews.each do |review| %>
+      <div class="review-info">
+        <p>
+        <span class="title-item-name"><%= link_to @item.name, new_item_booking_path(@item.id) %></span> <br>
+        <strong>Rating: </strong><%= "⭐" * review.rating %> <br>
+        <strong>Comment: </strong><%= review.comment %>
+        <hr>
+        </p>
+      </div>
+      <% end %>
+    <% else %>
+      <p><em>There are no reviews for this item.</em></p>
     <% end %>
   </div>
   <br>

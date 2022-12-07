@@ -1,4 +1,4 @@
-<div class="show-chat-content">
+<div class="show-chat-content" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
 
   <h1><%= @chatroom.name %></h1>
 
@@ -18,7 +18,7 @@
     <div>
       <% @other_user = @chatroom.participants.find{|participant| participant.user != current_user} %>
       <% if @other_user.user.photo.key %>
-        <%=cl_image_tag @other_user.user.photo.key, crop: :fit%>
+        <%=cl_image_tag @other_user.user.photo.key%>
       <% else %>
         <img src="https://png.pngtree.com/png-vector/20190114/ourlarge/pngtree-vector-avatar-icon-png-image_313572.jpg">
       <% end %>
@@ -26,23 +26,17 @@
   </div>
 
 
-  <div class="messages">
+  <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
-      <div class="messages-line">
-        <div id="message-<%= message.id %>">
-          <small>
-            ⚫  <strong><%= message.user.username %></strong>
-            <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-          </small>
-          <p><%= message.content %></p>
-        </div>
-      </div>
+
+    <%= render "messages/message", message: message%>
+
     <% end %>
   </div>
 
 
   <%= simple_form_for [@chatroom, @message],
-    html: {class: "chat-input"} do |f|
+    html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "chat-input" } do |f|
   %>
   <div>
     <%= f.input :content,

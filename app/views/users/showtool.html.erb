@@ -10,10 +10,9 @@
   <ul>
     <li class="showtool-list"> <% @items.each do |item| %>
       <div class="showtool-box">
-
         <div class="showtool-info">
           <div class="showtool-box-photo">
-            <%= link_to (cl_image_tag item.photo.key), item_path(item) %>
+            <%= link_to (cl_image_tag item.photo.key), new_item_booking_path(item.id) %>
           </div>
 
           <div class="showtool-box-text">
@@ -25,7 +24,7 @@
           <% if item.user == current_user %>
             <div class="showtool-button-action">
               <%= link_to "Edit", edit_item_path(item), class: "button-yellow" %>
-              <%= link_to "Destroy", item_path(item), data: {turbo_method: :delete}, class: "btn-login mt-3" %>
+              <%= link_to "Remove", item_path(item), data: {turbo_method: :delete}, class: "button-white mt-3" %>
             </div>
           <% else %>
           <% end %>

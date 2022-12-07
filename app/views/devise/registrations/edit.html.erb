@@ -27,32 +27,32 @@
         <%= f.input :email, required: true, autofocus: true %>
         <%= f.input :address, required: true, autofocus: true %>
 
-        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-        <% end %>
+          <% end %>
 
-          <%= f.input :description,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: false,
-                label: false,
-                placeholder: "Create new password",
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                label: false,
-                placeholder: "Repeat your new password",
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                label: false,
-                placeholder: "Type your current password *",
-                hint: "We need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :photo, as: :file,
-                label: false,
-                placeholder: "Photo *" %>
+        <%= f.input :description,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" }%>
+        <%= f.input :password,
+                    required: false,
+                    label: false,
+                    placeholder: "Create new password",
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: false,
+                    label: false,
+                    placeholder: "Repeat your new password",
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :current_password,
+                    label: false,
+                    placeholder: "Type your current password *",
+                    hint: "We need your current password to confirm your changes",
+                    required: true,
+                    input_html: { autocomplete: "current-password" } %>
+        <%= f.input :photo, as: :file,
+                    label: false,
+                    placeholder: "Photo *" %>
       </div>
 
       <div class="form-actions">

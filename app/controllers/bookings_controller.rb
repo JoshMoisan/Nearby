@@ -19,7 +19,6 @@ class BookingsController < ApplicationController
       lng: @item.user.longitude,
       info_window: render_to_string(partial: "items/info_window", locals: { item: @item })
     }]
-
   end
 
   def create
@@ -27,13 +26,15 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.item = @item
     # @booking.reviews = @review
+    @booking.price_in_token = @item.price * params[:booking][:amount_of_days].to_i
     if @booking.save
+      end_date = @booking.start_date + @booking.amount_of_days
+      @booking.update(end_date: end_date)
       redirect_to booking_path(@booking), notice: "Successfully created a booking."
     else
       redirect_to item_path(@item)
     end
   end
-
 
   def update
     @booking.user = current_user
