@@ -39,8 +39,9 @@
         </div>
       </div>
       <div class="user-message">
-        <a href=<%= user_path(@item.user.id) %>>
-        <h1><i class="fa-solid fa-envelope"></i></h1></a>
+
+        <h1><%= link_to @chatroom.present? ? chatroom_path(@chatroom) : chatrooms_path(user_id:@item.user.id), data:{turbo_method: @chatroom.present? ? :get : :post} do %><i class="fa-solid fa-envelope"></i><%end%></h1>
+
       </div>
     </div>
   </div>
