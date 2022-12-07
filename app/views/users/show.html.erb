@@ -20,7 +20,7 @@
 
       <div class="user-avatar">
         <% if @user.photo.key %>
-          <%=cl_image_tag @user.photo.key, crop: :fit%>
+          <%=cl_image_tag @user.photo.key, crop: :crop%>
         <% else %>
           <img src="https://png.pngtree.com/png-vector/20190114/ourlarge/pngtree-vector-avatar-icon-png-image_313572.jpg">
         <% end %>
