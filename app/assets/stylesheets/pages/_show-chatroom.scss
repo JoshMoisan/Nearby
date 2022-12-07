@@ -1,6 +1,7 @@
 .chat-input {
   display: flex;
-  position: fixed;
+  justify-content: space-evenly;
+  position: relative;
   bottom: 10vh;
 }
 
@@ -50,7 +51,7 @@
   background: white;
   box-shadow: 8px 4px 0px black;
   padding: 10px;
-  margin-bottom: 150px;
+  margin-bottom: 100px;
 }
 
 .messages-line {
