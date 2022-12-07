@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.booking = @booking
     if @review.save
-      redirect_to review_path(@review), notice: 'Thank you for your review!'
+      redirect_to user_bookings_path(@booking), notice: 'Thank you for your review!'
     else
       render :new, status: :unprocessable_entity
     end

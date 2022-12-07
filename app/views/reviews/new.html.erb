@@ -5,8 +5,8 @@
 
     <%= simple_form_for [@booking, @review] do |f| %>
     <div class= "form-inputs">
-        <%= f.input :comment %>
         <%= f.input :rating, collection: 0..5 %>
+        <%= f.input :comment %>
     </div>
     <div class="form-actions">
       <%= f.button :submit, :"Add review", {class:"button-large-items"} %>
