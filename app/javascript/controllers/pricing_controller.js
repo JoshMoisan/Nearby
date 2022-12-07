@@ -11,7 +11,6 @@ export default class extends Controller {
     const price = this.priceTarget.dataset.price
     const duration = this.daysTarget.value
     const bookingPrice = price * duration
-    this.totalTarget.innerHTML = bookingPrice
+    this.totalTarget.innerHTML = `${price} <i class="fa-solid fa-coins"></i> /day = ${bookingPrice} <i class="fa-solid fa-coins"></i>`
   }
-
 }
