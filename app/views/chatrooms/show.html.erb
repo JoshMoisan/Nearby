@@ -1,29 +1,16 @@
 <div class="show-chat-content" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
-
-  <h1><%= @chatroom.name %></h1>
-
-  <div class="chat-avatar">
-    <div>
-      <% if current_user.photo.key %>
-          <%=cl_image_tag current_user.photo.key, crop: :crop%>
-        <% else %>
-          <img src="https://png.pngtree.com/png-vector/20190114/ourlarge/pngtree-vector-avatar-icon-png-image_313572.jpg">
-        <% end %>
-    </div>
-
-    <div id="double-arrow">
-      <%= image_tag("arrow-double.png") %>
-    </div>
-
-    <div>
-      <% @other_user = @chatroom.participants.find{|participant| participant.user != current_user} %>
+  <% @other_user = @chatroom.participants.find{|participant| participant.user != current_user} %>
+  <a href=<%= user_path(@other_user.user.id) %>>
+  <h1><%= @chatroom.name %>
+    <div class="chat-avatar">
       <% if @other_user.user.photo.key %>
         <%=cl_image_tag @other_user.user.photo.key%>
       <% else %>
         <img src="https://png.pngtree.com/png-vector/20190114/ourlarge/pngtree-vector-avatar-icon-png-image_313572.jpg">
       <% end %>
     </div>
-  </div>
+  </h1>
+  </a>
 
 
   <div class="messages" data-chatroom-subscription-target="messages">
