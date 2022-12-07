@@ -1,6 +1,6 @@
 <div class="form-bg-edit">
   <div class="forms-container-style" style="padding-top: 40px; padding-bottom: 60px;">
-    <h2 style="margin-left: 40px;">Edit <%= resource_name.to_s.humanize %></h2>
+    <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
@@ -57,14 +57,13 @@
 
       <div class="form-actions">
         <%= f.button :submit, "Update" %>
-      </div>
-    <% end %>
+      </div> <br>
 
-
-    <p style="margin-left: 50px;"><small>Unhappy?</small></p>
+    <p style="margin-left: 50px"><small>Unhappy?</small></p>
     <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn-login" %>
     <%# <%= link_to "Back", :back %>
     </div>
+    <% end %>
 
   </div>
 </div>
