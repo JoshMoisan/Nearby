@@ -5,31 +5,28 @@
     <h4>Swipe <strong>DOWN</strong> to <strong>BORROW</strong></h4>
   </div>
 
-<div data-controller="drag-home">
-  <div class="main"  >
-    <h1>NEARBY</h1>
+<div data-controller="drag-home" class="main">
+  <h1>NEARBY</h1>
 
 
-    <div class="white-circle" >
-    </div>
+  <div class="white-circle" >
+  </div>
 
-    <div class="yellow-circle">
-    </div>
+  <div class="yellow-circle">
+  </div>
 
-    <div class="anchor" data-drag-home-target="dragging">
-    </div>
+  <div class="anchor" data-drag-home-target="dragging">
+  </div>
 
-    <div class="yellow-rect">
-    </div>
+  <div class="yellow-rect">
+  </div>
 
-    <div class="white-rect">
-    </div>
-
+  <div class="white-rect">
   </div>
 </div>
 
-
-<script>
+<% if true %>
+  <script>
   window.onscroll = function(ev) {
 
     // REDIRECT TO USER'S PROFILE
@@ -49,3 +46,4 @@
   };
 
 </script>
+<% end %>
