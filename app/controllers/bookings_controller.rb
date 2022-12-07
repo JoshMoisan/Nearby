@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.item = @item
     if @booking.save
-      redirect_to booking_path(@booking) , notice: "Successfully created a booking."
+      redirect_to booking_path(@booking) , notice: "Successfully booked!."
     else
       redirect_to item_path(@item)
     end
