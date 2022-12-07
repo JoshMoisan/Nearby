@@ -19,7 +19,7 @@
 
       <div class="user-avatar">
         <% if @user.photo.key %>
-          <%=cl_image_tag @user.photo.key, crop: :crop%>
+          <%=cl_image_tag @user.photo.key%>
         <% else %>
           <img src="https://png.pngtree.com/png-vector/20190114/ourlarge/pngtree-vector-avatar-icon-png-image_313572.jpg">
         <% end %>
@@ -30,6 +30,21 @@
       <% if @user == current_user %>
         <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "button-yellow" %>
       <% end %>
+      <div class="card-bottom-half">
+        <div class="user-rating">
+
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+        </div>
+        <div id="user-description">
+         <% if @user == current_user %>
+          <p><strong><%= current_user.first_name %> <%= current_user.last_name %></strong></p>
+        <% end %>
+        </div>
+      </div>
     </div>
   </div>
 

@@ -19,6 +19,7 @@
   box-shadow: 8px 4px 0px black;
   font-family: 'Inter', sans-serif;
   padding: 30px;
+  margin-top: 5%;
   align-content: space-between;
   flex-direction: column;
 }
@@ -44,8 +45,8 @@
 }
 
 .user-avatar img{
-  width: 135px;
-  height: 135px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   border: 2px solid black;
   margin: 0px 10px;

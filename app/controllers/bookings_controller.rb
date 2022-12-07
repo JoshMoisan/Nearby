@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @item = Item.find(params[:item_id])
+    # @chatroom = Chatroom.find(params[:id])
 
     @marker = [{
       lat: @item.user.latitude,
@@ -28,9 +29,11 @@ class BookingsController < ApplicationController
     # @booking.reviews = @review
     @booking.price_in_token = @item.price * params[:booking][:amount_of_days].to_i
     if @booking.save
+
       end_date = @booking.start_date + @booking.amount_of_days
       @booking.update(end_date: end_date)
-      redirect_to booking_path(@booking), notice: "Successfully created a booking."
+      redirect_to booking_path(@booking), notice: "Successfully booked!."
+
     else
       redirect_to item_path(@item)
     end
