@@ -56,6 +56,7 @@
   right: 1%;
   top: 1%;
   z-index: 10;
+  object-fit: cover;
 }
 
 .card-bottom {
@@ -125,9 +126,7 @@
   width: 40px;
   justify-content: center;
   align-items: center;
-
 }
-
 
 table {
   width: 100%;
@@ -143,10 +142,19 @@ th, td {
   width: 60%;
 }
 
+.user-garage a {
+  color:black;
+}
 
 .box-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 33%;
+  max-height: 33%;
+
+  // Proposition border
+  // border: 1px solid black;
+  // border-radius: 20px;
+  // margin: 10px;
 }

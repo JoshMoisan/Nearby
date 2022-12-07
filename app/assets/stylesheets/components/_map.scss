@@ -1,6 +1,8 @@
 .mapboxgl-popup {
   width: 200px;
   height: 230px;
+  z-index: 2;
+  box-shadow: rgba(0, 0, 0, 0.08);
 }
 
 .mapboxgl-popup-content {
@@ -14,7 +16,45 @@
 }
 
 .popup-image {
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 150px;
+  max-height: 150px;
   border-radius: 15px;
+}
+
+.mapboxgl-popup-content h2 > a {
+  font-weight: 700;
+  color: #F6DB2D;
+}
+
+
+.mapboxgl-popup-content h5 {
+  color: black;
+  font-weight: 400;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.map-item-info {
+  padding-top: 6%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.map-item-info p {
+  color: black;
+}
+
+.map-on-item-index .mapboxgl-map {
+  overflow: hidden;
+  position: inherit;
+}
+
+.map-on-item-index  {
+  height: 100vh !important;
+}
+
+
+.mapboxgl-popup-close-button {
+  right: 5px;
+  transform: scale(2);
 }

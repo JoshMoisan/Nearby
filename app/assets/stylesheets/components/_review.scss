@@ -1,0 +1,38 @@
+.review-container {
+  background: white;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  box-shadow: 8px 4px 0px black;
+  margin-top: 10%;
+  margin-bottom: 20%;
+  padding-bottom: 4%;
+}
+
+.review-container p {
+  padding-left: 15px;
+}
+
+.review-container h2 {
+  margin-left: 4%;
+  margin-top: 6%;
+}
+
+.review-info {
+  // margin-top: 20px;
+  margin-inline: 10px;
+  padding-inline: 4%;
+  // border-bottom: 0.6px solid rgba(0, 0, 0, 0.289);
+  font-family: 'Inter', sans-serif;
+
+  font-weight: 400;
+  color: black;
+}
+
+.title-item-name a {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 16px;
+  color: black;
+}

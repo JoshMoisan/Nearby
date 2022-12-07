@@ -1,0 +1,78 @@
+.chat-input {
+  display: flex;
+  position: fixed;
+  bottom: 10vh;
+}
+
+.show-chat-content {
+  padding: 22px;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  background-image:  linear-gradient(#a2a2a2 1.5px, transparent 1px), linear-gradient(to right, #a2a2a2 1.5px, #ffffff 1px);
+  background-size: 45px 45px;
+}
+
+.show-chat-content h1 {
+  font-weight: 700;
+  margin-bottom: 8%;
+  border: 2px solid black;
+  background: $yellow-blast;
+  box-shadow: 8px 4px 0px black;
+  border-radius: 60px;
+  text-align: center;
+}
+
+.button-custom-chatroom {
+  transition: 250ms ease-in-out;
+  border-radius: 60px;
+  border: 2px solid black;
+  background: $yellow-blast;
+  font-weight: 400;
+  color: black;
+  padding: 0px 15px ;
+  box-shadow: 8px 4px 0px black;
+  text-align: center;
+  height: 38px;
+}
+
+.messages {
+  min-height: 60vh;
+  border-radius: 15px;
+  border: 2px solid black;
+  background: white;
+  box-shadow: 8px 4px 0px black;
+  padding: 10px;
+  margin-bottom: 150px;
+}
+
+.messages-line {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 5px;
+  z-index: 10;
+}
+
+.chat-avatar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-avatar img {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  border: 2px solid black;
+  margin-bottom: 5%;
+  object-fit: cover;
+}
+
+.chat-avatar #double-arrow img {
+  background: none;
+  border-radius: 0px;
+  width: 200px;
+  border: none;
+  height: 50%;
+}

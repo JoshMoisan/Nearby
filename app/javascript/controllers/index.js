@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import ChatroomSubscriptionController from "./chatroom_subscription_controller"
+application.register("chatroom-subscription", ChatroomSubscriptionController)
+
 import DragHomeController from "./drag_home_controller"
 application.register("drag-home", DragHomeController)
 
@@ -12,3 +15,6 @@ application.register("hello", HelloController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
+
+import PricingController from "./pricing_controller"
+application.register("pricing", PricingController)

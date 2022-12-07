@@ -1,19 +1,6 @@
 <div class="form-bg">
   <div class="forms-container-style">
-    <h2 style="margin-left: 40px;">Add your item</h2>
-
-    <%= simple_form_for [@user,@item] do |f| %>
-    <div class= "form-inputs">
-      <%= f.input :name, label: false, placeholder: "Name *"%>
-      <%= f.input :category, collection: Item::CATEGORIES%>
-      <%= f.input :condition, collection: Item::CONDITION %>
-      <%= f.input :price, label: false, placeholder: "Price *" %>
-      <%= f.input :description, label: false, placeholder: "Description *"%>
-      <%= f.input :photo, as: :file, label: false, placeholder: "Photo *" %>
-    </div>
-    <div class="form-actions" style="margin-left: 8vh;">
-      <%= f.button :submit, :"Add", {class:"button-large-items"} %>
-    </div>
-  <% end %>
+    <h2>Add your item</h2>
+    <%= render "form-item" %>
   </div>
 </div>

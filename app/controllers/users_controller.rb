@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user
+  before_action :set_user, except: [:showtool]
 
   def index
     @users = User.all
@@ -13,18 +13,25 @@ class UsersController < ApplicationController
   end
 
   def show
-    @current_user = User.find(params[:id])
+    @chatroom_name = get_name(@user, current_user)
+    @chatroom = Chatroom.where(name: @chatroom_name).first
 
-    # CHAT
-    @chatroom = Chatroom.new
-    @message = Message.new
-    @chatroom_name = get_name(@user, @current_user)
-    @single_chatroom = Chatroom.where(name: @chatroom_name).first || Chatroom.create_private_room([@user, @current_user], @room_name)
-    @messages = @single_chatroom.messages
+    @items = @user.items
   end
 
   def edit
   end
+
+  def showtool
+    @user = User.find(params[:user_id])
+    @items = @user.items
+    if params[:category].present?
+      @items = @user.items.where(category: params[:category])
+    else
+      @items = @user.items.all
+    end
+  end
+
 
   private
 
@@ -33,8 +40,7 @@ class UsersController < ApplicationController
   end
 
   def get_name(user1, user2)
-    users = [user1, user2].sort
-    "private_#{users[0].id}_#{users[1].id}"
+    users = [user1, user2]
+    "Chat with #{users[0].username}"
   end
-
 end

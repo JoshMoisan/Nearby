@@ -1,10 +1,10 @@
 class BookingsController < ApplicationController
-  before_action :set_item
+  before_action :set_item, except: :index
   before_action :set_booking, only: %i[show update destroy]
-
 
   def index
     @bookings = current_user.bookings
+    @item = Item.all
   end
 
   def show
@@ -12,6 +12,8 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @item = Item.find(params[:item_id])
+
     @marker = [{
       lat: @item.user.latitude,
       lng: @item.user.longitude,
@@ -23,13 +25,18 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.item = @item
+    # @booking.reviews = @review
+    @booking.price_in_token = @item.price * params[:booking][:amount_of_days].to_i
     if @booking.save
-      redirect_to booking_path(@booking) , notice: "Successfully booked!."
+
+      end_date = @booking.start_date + @booking.amount_of_days
+      @booking.update(end_date: end_date)
+      redirect_to booking_path(@booking), notice: "Successfully booked!."
+
     else
       redirect_to item_path(@item)
     end
   end
-
 
   def update
     @booking.user = current_user
@@ -60,6 +67,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params[:booking].permit(:start_date, :end_date, :price_in_token)
+    params[:booking].permit(:start_date, :end_date, :price_in_token, :amount_of_days)
   end
 end

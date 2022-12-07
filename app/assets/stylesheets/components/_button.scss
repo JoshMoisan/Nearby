@@ -1,41 +1,10 @@
 $yellow-blast: #F6DB2D;
 $soft-yellow: #FFF6BF;
 
-// SMALL BUTTON DOWN BELOW
-
-.button-small {
-  transition: 250ms ease-in-out;
-  border-radius: 50px;
-  border: 2px solid black;
-  background: $yellow-blast;
-  font-weight: 400;
-  color: black;
-  padding: 5px 15px ;
-  width: 80px;
-  box-shadow: 8px 4px 0px black;
-  font-family: 'Inter', sans-serif;
-  text-align: center;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  min-width: 95px;
-}
-
-.button-small:hover {
-  box-shadow: none;
-  border: 2px solid $yellow-blast;
-}
-
-.button-small a {
-  text-decoration: none;
-  color: black;
-  font-family: 'Inter', sans-serif;
-}
-
 
 // LARGE BUTTON DOWN BELOW
 
-
-.button-large {
+.button-yellow {
   transition: 250ms ease-in-out;
   border-radius: 60px;
   border: 2px solid black;
@@ -48,22 +17,32 @@ $soft-yellow: #FFF6BF;
   text-align: center;
 }
 
+.button-white {
+  transition: 250ms ease-in-out;
+  border-radius: 60px;
+  border: 2px solid black;
+  background: $white;
+  font-weight: 400;
+  color: black;
+  padding: 5px 15px ;
+  width: 150px;
+  box-shadow: 8px 4px 0px black;
+  text-align: center;
+}
 
-.button-large:hover {
+.button-yellow:hover {
   box-shadow: none;
   border: 2px solid $yellow-blast;
 }
 
-.button-large a {
+.button-yellow a {
   text-decoration: none;
   color: black;
   font-family: 'Inter', sans-serif;
-
 }
 
 
 // ROUND BUTTON DOWN BELOW
-
 
 .button-round {
   transition: 250ms ease-in-out;

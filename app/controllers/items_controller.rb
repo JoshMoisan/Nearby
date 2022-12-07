@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
     else
       @items = Item.all
     end
+
     @markers = @items.map do |item|
       {
         lat: item.user.latitude,
@@ -15,6 +16,10 @@ class ItemsController < ApplicationController
       }
     end
     @markers.compact
+
+    if params[:category].present?
+      @items = @items.where(category: params[:category])
+    end
   end
 
   def show
@@ -40,7 +45,6 @@ class ItemsController < ApplicationController
   def edit
   end
 
-
   def update
     @item.user = current_user
     if @item.update(item_params)
@@ -57,6 +61,7 @@ class ItemsController < ApplicationController
       render :index
     end
   end
+
 
   private
 

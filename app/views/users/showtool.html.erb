@@ -1,0 +1,38 @@
+<div class="showtool-content">
+
+  <% if @user == current_user %>
+    <h1><%= params[:category] %> from my Garage</h1>
+  <% else %>
+    <h1><%= params[:category] %> from <%= @user.first_name %>'s Garage</h1>
+  <% end %>
+
+
+  <ul>
+    <li class="showtool-list"> <% @items.each do |item| %>
+      <div class="showtool-box">
+        <div class="showtool-info">
+          <div class="showtool-box-photo">
+            <%= link_to (cl_image_tag item.photo.key), new_item_booking_path(item.id) %>
+          </div>
+
+          <div class="showtool-box-text">
+            <p><%= link_to item.name, item_path(item) %></p>
+          </div>
+        </div>
+
+        <div class="showtool-box-action">
+          <% if item.user == current_user %>
+            <div class="showtool-button-action">
+              <%= link_to "Edit", edit_item_path(item), class: "button-yellow" %>
+              <%= link_to "Remove", item_path(item), data: {turbo_method: :delete}, class: "button-white mt-3" %>
+            </div>
+          <% else %>
+          <% end %>
+        </div>
+
+      </div>
+    <% end %>
+    </li>
+  </ul>
+
+</div>

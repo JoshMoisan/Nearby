@@ -1,2 +1,16 @@
-<h1>Reviews#new</h1>
-<p>Find me in app/views/reviews/new.html.erb</p>
+<div class="form-bg">
+  <div class="forms-container-style">
+    <h2 style="align-text: center;">Reviewing</h2>
+      <p style="align-text: center;"> <%= @booking.item.name %> </p>
+
+    <%= simple_form_for [@booking, @review] do |f| %>
+    <div class= "form-inputs">
+        <%= f.input :rating, collection: 0..5 %>
+        <%= f.input :comment %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, :"Add review", {class:"button-large-items"} %>
+    </div>
+  <% end %>
+  </div>
+</div>

@@ -1,10 +1,7 @@
-// items:
-
 .h1-item-form {
   margin-left: 8%;
   font-weight: 600;
 }
-
 
 .form-text {
   color: black;
@@ -13,7 +10,6 @@
   margin-top: 0%;
   margin-bottom: 0;
 }
-
 
 .input-items {
   border-radius: 20px;
@@ -24,57 +20,47 @@
   height: 40px;
 }
 
-
 .input-photo {
-  // items photo
   border-radius: 20px;
   background-color: #FFF6BF;
   border: 2px solid black;
-
 }
-
-
-// #new_item {
-//   margin-top: 20%;
-
-
-
-// }
-
 
 .new-item-container h1 {
   padding-top: 15%;
   margin-bottom: 0;
 }
 
-
 .input-bookings {
-
   border-radius: 20px;
   background-color: #FFF6BF;
   margin-top: 0%;
-  margin-bottom: 10%;
+  margin-bottom: 2%;
   border: 2px solid black;
-
 }
 
 .form-text-booking {
   color: black;
   margin-left: 15%;
   margin-right: 15%;
-  margin-top: 12%;
-  padding-bottom: 150px;
-
+  margin-top: 10%;
+  padding-bottom: 20px;
 }
-
 
 .h1-booking-form {
   margin-left: 28%;
   // margin-top: 25%;
   // margin-bottom: 10%;
-
 }
 
+.booking-preview {
+  text-align: center;
+  padding-bottom: 5%;
+}
+
+.booking-button {
+  text-align: center;
+}
 
 .button-large-items {
   transition: 250ms ease-in-out;
@@ -94,16 +80,13 @@
   // margin-right: 15%;
 }
 
-
 .button-large-items:hover {
   box-shadow: none;
   border: 2px solid $yellow-blast;
 }
 
-
 .new-booking-content h1 {
   padding-top: 15%;
-
 }
 
 .new-booking-content .button-large  {

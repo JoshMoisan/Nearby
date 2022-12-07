@@ -1,0 +1,24 @@
+<div class="chat-content">
+  <h1>My Chats</h1>
+
+  <div class="chat">
+    <ul>
+      <li class="chat-list"><% @chatrooms.each do | chatroom |%>
+        <div class="chat-box">
+          <div class="chat-box-text">
+            <h3><%= link_to chatroom.name, chatroom_path(chatroom) %> </h3>
+          </div>
+          <div class="chat-box-avatar">
+            <% @other_user = chatroom.participants.find{|participant| participant.user != current_user} %>
+            <% if @other_user.user.photo.key %>
+              <%=cl_image_tag @other_user.user.photo.key%>
+            <% else %>
+              <img src="https://png.pngtree.com/png-vector/20190114/ourlarge/pngtree-vector-avatar-icon-png-image_313572.jpg">
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      </li>
+    </ul>
+  </div>
+</div>
