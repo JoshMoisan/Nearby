@@ -18,7 +18,14 @@
                     label: false,
                     placeholder: "Last name *",
                     input_html: { autocomplete: "email" }%>
+        <%= f.input :username,
+                    required: true,
+                    autofocus: true,
+                    label: false,
+                    placeholder: "Username *",
+                    input_html: { autocomplete: "email" }%>
         <%= f.input :email, required: true, autofocus: true %>
+        <%= f.input :address, required: true, autofocus: true %>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -28,7 +35,6 @@
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
     <%= f.input :password,
-                hint: "Leave it blank if you don't want to change it",
                 required: false,
                 label: false,
                 placeholder: "Create new password",
@@ -54,8 +60,8 @@
       </div>
     <% end %>
 
-    <h2 style="margin-left: 40px; padding-top: 40px;">Cancel my account</h2>
-    <p style="margin-left: 40px;">Unhappy?</p>
+
+    <p style="margin-left: 50px;"><small>Unhappy?</small></p>
     <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn-login" %>
     <%# <%= link_to "Back", :back %>
     </div>
