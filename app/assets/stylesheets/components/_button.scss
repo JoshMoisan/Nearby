@@ -17,6 +17,19 @@ $soft-yellow: #FFF6BF;
   text-align: center;
 }
 
+.button-white {
+  transition: 250ms ease-in-out;
+  border-radius: 60px;
+  border: 2px solid black;
+  background: $white;
+  font-weight: 400;
+  color: black;
+  padding: 5px 15px ;
+  width: 150px;
+  box-shadow: 8px 4px 0px black;
+  text-align: center;
+}
+
 .button-yellow:hover {
   box-shadow: none;
   border: 2px solid $yellow-blast;
