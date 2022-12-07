@@ -6,10 +6,11 @@ Rails.application.routes.draw do
     get 'showtool', to: 'users#showtool'
     resources :items do
       resources :bookings, except: %i[edit] do
-        resources :review, only: %i[index new create]
+        resources :reviews, only: %i[index new create]
       end
     end
     resources :bookings, only: :index
+
   end
 
 
