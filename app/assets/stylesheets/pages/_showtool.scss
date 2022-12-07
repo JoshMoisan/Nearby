@@ -9,6 +9,7 @@
 
 .showtool-content h1 {
   font-weight: 700;
+  margin-top: 10%;
   margin-bottom: 8%;
   border: 2px solid black;
   background: $yellow-blast;
@@ -51,14 +52,15 @@
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  border: 2px solid black;
+  box-shadow: none !important;
+  border: outset !important;
   object-fit: cover;
 }
 
 .showtool-info {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
 }
 
 
