@@ -22,8 +22,9 @@
 
 
   <body>
+    <%= link_to "<", :back, class: "button-back" unless current_page?(home_path) %>
     <%= render "shared/flashes" %>
     <%= yield %>
-    <%= render partial: "shared/navigation_bar" unless current_page?(home_path)%>
+    <%= render partial: "shared/navigation_bar" unless current_page?(home_path) %>
   </body>
 </html>
