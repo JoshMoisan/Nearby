@@ -1,8 +1,8 @@
 <div class="show-chat-content" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
-
+  <% @other_user = @chatroom.participants.find{|participant| participant.user != current_user} %>
+  <a href=<%= user_path(@other_user.user.id) %>>
   <h1><%= @chatroom.name %>
     <div class="chat-avatar">
-      <% @other_user = @chatroom.participants.find{|participant| participant.user != current_user} %>
       <% if @other_user.user.photo.key %>
         <%=cl_image_tag @other_user.user.photo.key%>
       <% else %>
@@ -10,6 +10,7 @@
       <% end %>
     </div>
   </h1>
+  </a>
 
 
   <div class="messages" data-chatroom-subscription-target="messages">

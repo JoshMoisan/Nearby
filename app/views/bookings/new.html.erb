@@ -27,7 +27,9 @@
           </a>
         </div>
         <div class="user-information">
+        <a href=<%= user_path(@item.user.id) %>>
           <%= @item.user.first_name %> <%= @item.user.last_name %>
+        </a>
           <p class="stars"><i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
@@ -37,7 +39,8 @@
         </div>
       </div>
       <div class="user-message">
-        <h1><i class="fa-solid fa-envelope"></i></h1>
+        <a href=<%= user_path(@item.user.id) %>>
+        <h1><i class="fa-solid fa-envelope"></i></h1></a>
       </div>
     </div>
   </div>
