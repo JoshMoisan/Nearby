@@ -11,7 +11,7 @@
           <div class="chat-box-avatar">
             <% @other_user = chatroom.participants.find{|participant| participant.user != current_user} %>
             <% if @other_user.user.photo.key %>
-              <%=cl_image_tag @other_user.user.photo.key, crop: :fit%>
+              <%=cl_image_tag @other_user.user.photo.key%>
             <% else %>
               <img src="https://png.pngtree.com/png-vector/20190114/ourlarge/pngtree-vector-avatar-icon-png-image_313572.jpg">
             <% end %>
