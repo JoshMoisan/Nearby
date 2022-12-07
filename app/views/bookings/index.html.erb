@@ -1,2 +1,10 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
+<div class="bookings-container">
+  <div class="bookings">
+    <% @bookings.each do |booking| %>
+      <a href=<%=new_item_booking_path(booking.item_id)%>>
+      <h5><%= booking.item.name %></h5></a>
+      <%= cl_image_tag "#{booking.item.photo.key}", crop: :fit, style: 'max-width: 400px;' %>
+      <p> Status: <%= booking.status %></p>
+      <% end %>
+  </div>
+</div>

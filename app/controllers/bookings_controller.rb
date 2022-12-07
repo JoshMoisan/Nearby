@@ -1,9 +1,10 @@
 class BookingsController < ApplicationController
-  before_action :set_item
+  before_action :set_item, except: :index
   before_action :set_booking, only: %i[show update destroy]
 
   def index
     @bookings = current_user.bookings
+    @item = Item.all
   end
 
   def show
