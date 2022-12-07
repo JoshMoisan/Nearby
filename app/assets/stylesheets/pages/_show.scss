@@ -1,5 +1,6 @@
 .show-content {
   padding: 22px;
+  padding-bottom: 7%;
   width: 100%;
   background-color: #ffffff;
   background-image:  linear-gradient(#a2a2a2 1.5px, transparent 1px), linear-gradient(to right, #a2a2a2 1.5px, #ffffff 1px);
@@ -21,7 +22,6 @@
   margin-top: 5%;
   align-content: space-between;
   flex-direction: column;
-
 }
 
 .card-top {
@@ -30,7 +30,6 @@
 
 .garage-info {
   max-width: 70%;
-
 }
 
 .garage-info p {
@@ -38,7 +37,6 @@
   font-size: 16px;
   margin-bottom: 0;
 }
-
 
 .card-top h1 {
   border-bottom: 1px solid black;
@@ -86,7 +84,6 @@
   margin-right: 0px;
  }
 
-
 .user-garage-container {
   background-color: #ffffff;
   // opacity: 0.3;
@@ -100,17 +97,14 @@
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-
   border-radius: 30px;
   border: 2px solid black;
-
   font-weight: 400;
   color: black;
-  height: 50vh;
+  height: 47vh;
   width: 100%;
   box-shadow: 8px 4px 0px black;
 }
-
 
 #user-notif {
   display: flex;
@@ -134,7 +128,6 @@ table {
 }
 
 th, td {
-  // border: 1px solid;
   text-align: center;
 }
 
@@ -144,6 +137,7 @@ th, td {
 
 .user-garage a {
   color:black;
+  text-align: center;
 }
 
 .box-box {
@@ -152,9 +146,4 @@ th, td {
   align-items: center;
   width: 33%;
   max-height: 33%;
-
-  // Proposition border
-  // border: 1px solid black;
-  // border-radius: 20px;
-  // margin: 10px;
 }

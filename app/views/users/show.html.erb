@@ -1,5 +1,4 @@
 <div class="show-content">
-
   <div class="head-card">
     <div class="card-top">
       <div id="user-notif">
@@ -13,7 +12,7 @@
         <% end %>
 
         <% if @user == current_user %>
-          <p><strong>Token :</strong><%= current_user.tokens %></p>
+          <p><strong>Tokens </strong><%= current_user.tokens %> <i class="fa-solid fa-coins"></i></p>
         <% end %>
         <p><strong>About me </strong><%= current_user.description %></p>
       </div>
@@ -31,7 +30,6 @@
       <% if @user == current_user %>
         <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "button-yellow" %>
       <% end %>
-
       <div class="card-bottom-half">
         <div class="user-rating">
 
@@ -55,59 +53,67 @@
       <%= link_to "REVIEW", "#", class: "button-yellow" %>
       <%= link_to "CHAT", (@chatroom.present? ? chatroom_path(@chatroom) : chatrooms_path(user_id:params[:id])) , class: "button-yellow", data:{turbo_method: (@chatroom.present? ? :get : :post)}   %>
     <% else %>
-      <%= link_to "MY REVIEWS", "#", class: "button-yellow" %>
+      <%= link_to "MY BOOKINGS", "#", class: "button-yellow" %>
       <%= link_to "UPDATE", edit_user_registration_path(@user), class: "button-yellow" %>
       <% end %>
   </div>
 
   <div class="user-garage-container">
     <div class="user-garage">
-
         <div class="box-box">
-          <img src="<%= image_url("tools.png")%>">
-          <%= link_to 'Tools', user_showtool_path(user_id: @user.id, category: "Tools") %>
+          <%= link_to user_showtool_path(user_id: @user.id, category: "Tools") do %>
+            <img src="<%= image_url("tools.png")%>">
+            <p>Tools</p>
+          <% end %>
         </div>
-
         <div class="box-box">
-          <img src="<%= image_url("sports.png")%>">
-          <%= link_to 'Sports', user_showtool_path(user_id: @user.id, category: "Sports") %>
+          <%= link_to user_showtool_path(user_id: @user.id, category: "Sports") do %>
+            <img src="<%= image_url("sports.png")%>">
+            <p>Sports</p>
+          <% end %>
         </div>
-
         <div class="box-box">
-          <img src="<%= image_url("shovel.png")%>">
-          <%= link_to 'Garden', user_showtool_path(user_id: @user.id, category: "Garden") %>
+          <%= link_to user_showtool_path(user_id: @user.id, category: "Garden") do %>
+            <img src="<%= image_url("shovel.png")%>">
+            <p>Garden</p>
+          <% end %>
         </div>
-
         <div class="box-box">
-          <img src="<%= image_url("plug.png")%>" >
-          <%= link_to 'Electronics', user_showtool_path(user_id: @user.id, category: "Electronics") %>
+          <%= link_to user_showtool_path(user_id: @user.id, category: "Electronics") do %>
+            <img src="<%= image_url("plug.png")%>" >
+            <p>Electronics</p>
+          <% end %>
         </div>
-
         <div class="box-box">
-          <img src="<%= image_url("painter.png")%>">
-          <%= link_to 'Decoration', user_showtool_path(user_id: @user.id, category: "Decoration") %>
+          <%= link_to user_showtool_path(user_id: @user.id, category: "Decoration") do %>
+            <img src="<%= image_url("painter.png")%>" >
+            <p>Decoration</p>
+          <% end %>
         </div>
-
         <div class="box-box">
-          <img src="<%= image_url("console.png")%>">
-          <%= link_to 'Gaming', user_showtool_path(user_id: @user.id, category: "Gaming") %>
+          <%= link_to user_showtool_path(user_id: @user.id, category: "Gaming") do %>
+            <img src="<%= image_url("console.png")%>" >
+            <p>Gaming</p>
+          <% end %>
         </div>
-
         <div class="box-box">
-          <img src="<%= image_url("camping.png")%>">
-          <%= link_to 'Camping', user_showtool_path(user_id: @user.id, category: "Camping") %>
+          <%= link_to user_showtool_path(user_id: @user.id, category: "Camping") do %>
+            <img src="<%= image_url("camping.png")%>" >
+            <p>Camping</p>
+          <% end %>
         </div>
-
         <div class="box-box">
-          <img src="<%= image_url("plantes-dinterieur.png")%>">
-          <%= link_to 'Art', user_showtool_path(user_id: @user.id, category: "Arts\ &\ Crafts") %>
+          <%= link_to user_showtool_path(user_id: @user.id, category: "Arts\ &\ Crafts") do %>
+            <img src="<%= image_url("plantes-dinterieur.png")%>" >
+            <p>Art</p>
+          <% end %>
         </div>
-
         <div class="box-box">
-          <img src="<%= image_url("ajouter.png")%>">
-          <%= link_to 'Other', user_showtool_path(user_id: @user.id, category: "Other") %>
+          <%= link_to user_showtool_path(user_id: @user.id, category: "Other") do %>
+            <img src="<%= image_url("ajouter.png")%>" >
+            <p>Other</p>
+          <% end %>
         </div>
-
       </div>
     </div>
 
