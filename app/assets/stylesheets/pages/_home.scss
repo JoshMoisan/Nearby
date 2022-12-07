@@ -20,9 +20,8 @@ $soft-yellow: #FFF6BF;
   height: 25%;
   width: 50%;
   position:absolute;
-  top: 100%;
-  right: 0;
-  transform: translateY(-50%);
+  top: 87.5%;
+  right: 0px;
 }
 
 .white-circle {
@@ -31,14 +30,13 @@ $soft-yellow: #FFF6BF;
   height: 25%;
   width: 50%;
   position:absolute;
-  top: 100%;
-  left: 0;
-  transform: translateY(-50%);
+  top: 87.5%;
+  left:0%;
 }
 
 .main{
-  // display: flex;
-  // flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .main h1  {
