@@ -57,6 +57,10 @@
       <div class= "form-text-booking">
         <%= f.input :start_date, as: :date, required: true, input_html: {class: "input-bookings"} %>
         <%= f.input :amount_of_days, as: :integer, required: true, input_html: {class: "input-bookings", data: { pricing_target: "days", action: "change->pricing#pricePreview"}} %>
+        <div>
+          <span class="booking-preview-total" data-pricing-target="total">
+          </span>
+        </div>
         <%= f.submit "Borrow", { class: "button-yellow borrow", style: 'align: center;'}%>
       </div>
     <% end %>

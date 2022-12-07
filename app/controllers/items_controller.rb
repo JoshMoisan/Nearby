@@ -8,19 +8,7 @@ class ItemsController < ApplicationController
       @items = Item.all
     end
 
-
-
-    if params[:category].present?
-      @items = @items.where(category: params[:category])
-    else
-      @items = Item.all
-    end
-
-
-
     @markers = @items.map do |item|
-
-
       {
         lat: item.user.latitude,
         lng: item.user.longitude,
@@ -28,6 +16,10 @@ class ItemsController < ApplicationController
       }
     end
     @markers.compact
+
+    if params[:category].present?
+      @items = @items.where(category: params[:category])
+    end
   end
 
   def show
