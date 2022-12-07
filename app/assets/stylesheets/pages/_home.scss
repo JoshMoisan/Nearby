@@ -20,8 +20,9 @@ $soft-yellow: #FFF6BF;
   height: 25%;
   width: 50%;
   position:absolute;
-  top: 87.5%;
-  right: 0px;
+  top: 100%;
+  right: 0;
+  transform: translateY(-50%);
 }
 
 .white-circle {
@@ -30,8 +31,9 @@ $soft-yellow: #FFF6BF;
   height: 25%;
   width: 50%;
   position:absolute;
-  top: 87.5%;
-  left:0%;
+  top: 100%;
+  left: 0;
+  transform: translateY(-50%);
 }
 
 .main{

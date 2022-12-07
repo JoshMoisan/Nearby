@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @item = Item.find(params[:item_id])
+    # @chatroom = Chatroom.find(params[:id])
 
     @marker = [{
       lat: @item.user.latitude,
