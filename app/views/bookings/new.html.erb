@@ -72,9 +72,15 @@
       <% @item.reviews.each do |review| %>
       <div class="review-info">
         <p>
-        <span class="title-item-name"><%= link_to @item.name, new_item_booking_path(@item.id) %></span> <br>
-        <strong>Rating: </strong><%= "⭐" * review.rating %> <br>
-        <strong>Comment: </strong><%= review.comment %>
+        <% (1..5).to_a.each do |star| %>
+          <% if star <= review.rating %>
+            <i class="fas fa-star" style="color: #ffb400;"></i>
+          <% else %>
+            <i class="fas fa-star" style="color: #ccc"></i>
+          <% end %>
+        <% end %> <br>
+        <small><%= review.comment %></small><br>
+        <small>by <%= review.booking.user.first_name %> on <%= review.created_at.strftime("%Y-%m-%d") %></small>
         <hr>
         </p>
       </div>
