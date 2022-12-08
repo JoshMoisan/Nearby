@@ -30,11 +30,20 @@
           <a href=<%= user_path(@item.user.id) %>>
             <%= @item.user.first_name %> <%= @item.user.last_name %>
           </a>
-          <p class="stars"><i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star"></i>
+          <p class="stars">
+            <% if @item.user.average_rating.present? %>
+              <% (1..5).to_a.each do |star| %>
+                <% if star <= @item.user.average_rating %>
+                  <i class="fa-solid fa-star"></i>
+                <% else %>
+                  <i class="fa-regular fa-star"></i>
+                <% end %>
+              <% end %>
+            <% else %>
+              <% 5.times do %>
+                <i class="fa-regular fa-star"></i>
+              <% end %>
+            <% end %>
           </p>
         </div>
       </div>
