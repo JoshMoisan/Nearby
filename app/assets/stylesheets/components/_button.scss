@@ -11,7 +11,20 @@ $soft-yellow: #FFF6BF;
   background: $yellow-blast;
   font-weight: 400;
   color: black;
-  padding: 5px 15px ;
+  padding: 5px 15px;
+  width: 150px;
+  box-shadow: 8px 4px 0px black;
+  text-align: center;
+}
+
+.button-yellow-log-out {
+  transition: 250ms ease-in-out;
+  border-radius: 60px;
+  border: 2px solid black;
+  background: $yellow-blast;
+  font-weight: 400;
+  color: black;
+  padding: 5px 41%;
   width: 150px;
   box-shadow: 8px 4px 0px black;
   text-align: center;

@@ -3,6 +3,7 @@
   justify-content: space-evenly;
   position: relative;
   bottom: 10vh;
+  margin-left: 10%;
 }
 
 .show-chat-content {
@@ -82,4 +83,9 @@
   width: 200px;
   border: none;
   height: 50%;
+}
+
+
+.chatbar {
+  background-color: white;
 }
