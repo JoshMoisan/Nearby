@@ -11,11 +11,13 @@
           <h1><%= @user.first_name %>'s Garage</h1>
         <% end %>
         <div class="user-rating">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-regular fa-star"></i>
+          <% (1..5).to_a.each do |star| %>
+            <% if star <= @user.average_rating %>
+              <i class="fa-solid fa-star"></i>
+            <% else %>
+              <i class="fa-regular fa-star"></i>
+            <% end %>
+          <% end %>
         </div>
         <% if @user == current_user %>
           <p><strong>Tokens </strong><%= current_user.tokens %> <i class="fa-solid fa-coins"></i></p>
@@ -104,14 +106,14 @@
 
   <div class="review-container">
     <h2><strong>Reviews</strong></h2>
-    <% if @user_reviews.present? %>
-      <% @user_reviews.each do |review| %>
+    <% if @user.booking_reviews.present? %>
+      <% @user.booking_reviews.each do |review| %>
             <div class="review-info">
               <span class="title-item-name"><%= link_to review.booking.item.name, new_item_booking_path(review.booking.item) %></span><br>
               <p>
               <% (1..5).to_a.each do |star| %>
                 <% if star <= review.rating %>
-                  <i class="fas fa-star" style="color: #ffb400;"></i>
+                  <i class="fas fa-star" style="color: #F6DB2D;"></i>
                 <% else %>
                   <i class="fas fa-star" style="color: #ccc"></i>
                 <% end %>
