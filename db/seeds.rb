@@ -11,6 +11,8 @@ require "open-uri"
 
 Faker::Config.locale = 'es'
 
+Faker::Address.city_prefix = "Barcelona"
+
 puts 'Destroying previous users and items 🌱'
 
 Review.destroy_all
@@ -20,25 +22,25 @@ User.destroy_all
 
 puts 'Seeding db 🌱'
 
-5.times do
+7.times do
   user = User.create(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
-    username: Faker::Name.first_name,
-    description: Faker::Lorem.sentence(word_count: 10),
+    username: Faker::Internet.username(specifier: 5..10),
+    description: Faker::TvShows::SiliconValley.quote,
     password: "123456",
-    address: Faker::Address.city,
+    address: Faker::Address.full_address,
     profile_picture: Faker::LoremFlickr.image
   )
-  3.times do
+  5.times do
     item = Item.new(
-      name: Faker::Appliance.equipment,
+      name: Faker::Commerce.product_name,
       category: Item::CATEGORIES.sample,
       condition: Item::CONDITION.sample,
-      description: Faker::Lorem.sentence(word_count: 15),
+      description: Faker::Lorem.sentence(7),
       item_picture: Faker::LoremFlickr.image,
-      price: [1, 2, 5, 10, 25].sample,
+      price: Faker::Number.within(range: 1..100),
       user_id: user.id
     )
                     # PROBLEM WITH THE UNSPLASH API
