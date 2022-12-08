@@ -11,7 +11,6 @@ require "open-uri"
 
 Faker::Config.locale = 'es'
 
-Faker::Address.city_prefix = "Barcelona"
 
 puts 'Destroying previous users and items 🌱'
 
@@ -29,8 +28,9 @@ puts 'Seeding db 🌱'
     email: Faker::Internet.email,
     username: Faker::Internet.username(specifier: 5..10),
     description: Faker::TvShows::SiliconValley.quote,
+    tokens: 100,
     password: "123456",
-    address: Faker::Address.full_address,
+    address: Faker::Address.city,
     profile_picture: Faker::LoremFlickr.image
   )
   5.times do
@@ -38,9 +38,9 @@ puts 'Seeding db 🌱'
       name: Faker::Commerce.product_name,
       category: Item::CATEGORIES.sample,
       condition: Item::CONDITION.sample,
-      description: Faker::Lorem.sentence(7),
+      description: Faker::Lorem.sentence(word_count: 15),
       item_picture: Faker::LoremFlickr.image,
-      price: Faker::Number.within(range: 1..100),
+      price: [5, 10, 20, 50, 100].sample,
       user_id: user.id
     )
                     # PROBLEM WITH THE UNSPLASH API
