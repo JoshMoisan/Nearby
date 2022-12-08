@@ -31,7 +31,7 @@ class BookingsController < ApplicationController
 
       end_date = @booking.start_date + @booking.amount_of_days
       @booking.update(end_date: end_date)
-      redirect_to booking_path(@booking), notice: "Successfully booked!."
+      redirect_to booking_path(@booking), notice: "Successfully booked!"
 
     else
       redirect_to item_path(@item)
