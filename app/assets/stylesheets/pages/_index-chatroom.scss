@@ -12,6 +12,7 @@ $soft-yellow: #FFF6BF;
 
 .chat-content h1 {
   font-weight: 700;
+  margin-top: 10%;
   margin-bottom: 8%;
   border: 2px solid black;
   background: $yellow-blast;
@@ -56,6 +57,5 @@ $soft-yellow: #FFF6BF;
   width: 70px;
   height: 70px;
   border: 2px solid black;
-  box-shadow: 8px 4px 0px black;
   object-fit: cover;
 }
