@@ -1,8 +1,8 @@
 <div class="show-content">
   <div class="head-card">
-    <div class="card-top">
-      <div id="user-notif">
-        <i class="fa-solid fa-bell"></i>
+    <div class="card-top" data-controller="notification" data-notification-user-id-value="<%= current_user.id %>">
+      <div class="d-none user-notif" data-notification-target="bell">
+        <i class="fa-solid fa-bell" ></i>
       </div>
       <div class="garage-info">
         <% if @user == current_user %>
