@@ -3,17 +3,18 @@
   background-image:  linear-gradient(#a2a2a2 1.5px, transparent 1px), linear-gradient(to right, #a2a2a2 1.5px, #ffffff 1px);
   background-size: 45px 45px;
   width: 100%;
-  height: 125vh;
+  min-height: 125vh;
 }
 
 .booking-container {
   display: flex;
   flex-direction: column;
   padding: 5%;
+  padding-bottom: 30%;
 }
 
 .booking-container h1 {
-  margin-top: 5%;
+  margin-top: 10%;
   font-weight: 700;
   margin-bottom: 8%;
   border: 2px solid black;
@@ -84,4 +85,8 @@
   border: 2px solid black;
   box-shadow: 8px 4px 0px black;
   object-fit: cover;
+}
+
+.capitalize {
+  text-transform: capitalize;
 }

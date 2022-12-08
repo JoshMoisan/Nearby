@@ -3,5 +3,5 @@ class Booking < ApplicationRecord
   belongs_to :user
   has_many :reviews
 
-  enum status: %i[pending rejected confirmed]
+  enum status: %i[pending rejected confirmed ended]
 end
