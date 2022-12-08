@@ -1,10 +1,11 @@
 class BookingsController < ApplicationController
-  before_action :set_item, except: :index
+  before_action :set_item, only: %i[show new create destroy]
   before_action :set_booking, only: %i[show update destroy]
 
   def index
     @bookings = current_user.bookings
     @item = Item.all
+    @items_booked = current_user.items.select { |item| item.bookings.present? }
   end
 
   def show
@@ -40,10 +41,10 @@ class BookingsController < ApplicationController
 
   def update
     @booking.user = current_user
-    if @booking.update(status: params[:status])
-      redirect_to user_path(current_user)
+    if @booking.update!(status: params[:status])
+      redirect_to user_bookings_path(current_user)
     else
-      redirect_to item_path(@item)
+      redirect_to item_path(booking.item)
     end
   end
 

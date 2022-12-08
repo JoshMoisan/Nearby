@@ -7,14 +7,49 @@
             <%= cl_image_tag "#{booking.item.photo.key}", crop: :fit, class: 'booking-item-pic' %>
             <h5><%= booking.item.name %></h5></a>
           <a href=<%=new_booking_review_path(booking.id)%>>
+          <% if booking.status === 'ended' %>
             <p class="review-button"><strong>Add review</strong></p></a>
+          <% else %>
+            <p></p>
+      <% end %>
+
         </div>
           <div class="booking-info">
-          <p><strong>Status: </strong><%= booking.status %></p>
+          <p class="capitalize"><strong>Status: </strong><%= booking.status %></p>
+          <p><strong>Starting date: </strong><br>
+          <%= booking.start_date %></p>
           <p><strong>Returning date: </strong><br>
-          <%= booking.start_date + booking.amount_of_days %></p>
+          <%= booking.end_date %></p>
           <p><strong>Owner: </strong> <a href=<%= user_path(booking.item.user)%>> <%= booking.item.user.first_name %> </a></p>
         </div>
       </div>
+    <% end %>
+
+  <h1>My items booked</h1>
+    <% @items_booked.each do |item| %>
+      <% item.bookings.each do |booking| %>
+      <div class="booking-box">
+        <div>
+          <a href=<%=new_item_booking_path(booking.item_id)%>>
+            <%= cl_image_tag "#{booking.item.photo.key}", crop: :fit, class: 'booking-item-pic' %>
+            <h5><%= booking.item.name %></h5></a>
+          <% if booking.status === 'pending' %>
+            <%= link_to booking_path(booking, status: 'confirmed'), data: {turbo_method: :patch} do %>
+            <p class="review-button"><strong>Accept</strong></p></a>
+            <% end %>
+            <p></p>
+          <% end %>
+
+        </div>
+          <div class="booking-info">
+          <p class="capitalize"><strong>Status: </strong><%= booking.status %></p>
+          <p><strong>Starting date: </strong><br>
+          <%= booking.start_date %></p>
+          <p><strong>Returning date: </strong><br>
+          <%= booking.end_date %></p>
+          <p><strong>Owner: </strong> <a href=<%= user_path(booking.item.user)%>> <%= booking.item.user.first_name %> </a></p>
+        </div>
+      </div>
+      <% end %>
     <% end %>
 </div>
