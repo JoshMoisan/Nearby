@@ -11,6 +11,7 @@
           <h1><%= @user.first_name %>'s Garage</h1>
         <% end %>
         <div class="user-rating">
+        <% if @user.average_rating.present? %>
           <% (1..5).to_a.each do |star| %>
             <% if star <= @user.average_rating %>
               <i class="fa-solid fa-star"></i>
@@ -18,6 +19,11 @@
               <i class="fa-regular fa-star"></i>
             <% end %>
           <% end %>
+        <% else %>
+          <% 5.times do %>
+            <i class="fa-regular fa-star"></i>
+          <% end %>
+        <% end %>
         </div>
         <% if @user == current_user %>
           <p><strong>Tokens </strong><%= current_user.tokens %> <i class="fa-solid fa-coins"></i></p>
