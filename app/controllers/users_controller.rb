@@ -15,7 +15,6 @@ class UsersController < ApplicationController
   def show
     @chatroom_name = get_name(@user, current_user)
     @chatroom = Chatroom.where(name: @chatroom_name).first
-
     @items = @user.items
   end
 
@@ -31,7 +30,6 @@ class UsersController < ApplicationController
       @items = @user.items.all
     end
   end
-
 
   private
 

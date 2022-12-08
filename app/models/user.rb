@@ -5,7 +5,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   geocoded_by :address
-  has_many :messages
+  has_many :messages, dependent: :destroy
   has_one_attached :photo
   has_many :participants, dependent: :destroy
   has_many :chatrooms, through: :participants
@@ -15,4 +15,18 @@ class User < ApplicationRecord
   # Pending validations on pictures (id, profile)
   validates :email, :first_name, :last_name, :username, :address, presence: true
   validates :username, uniqueness: true
+
+  def average_rating
+    return nil if booking_reviews.count.zero?
+
+    sum = 0
+    booking_reviews.each do |review|
+      sum += review.rating
+    end
+    return (sum.to_f / booking_reviews.count).round(1)
+  end
+
+  def booking_reviews
+    Review.joins(booking: :item).where("items.user_id=?", self.id)
+  end
 end

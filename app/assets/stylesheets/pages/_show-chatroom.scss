@@ -1,7 +1,9 @@
 .chat-input {
   display: flex;
-  position: fixed;
+  justify-content: space-evenly;
+  position: relative;
   bottom: 10vh;
+  margin-left: 10%;
 }
 
 .show-chat-content {
@@ -14,13 +16,20 @@
 }
 
 .show-chat-content h1 {
+  color: black;
+  margin-top: 4%;
   font-weight: 700;
   margin-bottom: 8%;
   border: 2px solid black;
-  background: $yellow-blast;
+  background: #F6DB2D;
   box-shadow: 8px 4px 0px black;
-  border-radius: 60px;
+  border-radius: 30px;
+  height: 70px;
+  display: flex;
   text-align: center;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 25px;
 }
 
 .button-custom-chatroom {
@@ -43,7 +52,7 @@
   background: white;
   box-shadow: 8px 4px 0px black;
   padding: 10px;
-  margin-bottom: 150px;
+  margin-bottom: 100px;
 }
 
 .messages-line {
@@ -54,18 +63,17 @@
   z-index: 10;
 }
 
-.chat-avatar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+// .chat-avatar {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+// }
 
 .chat-avatar img {
-  height: 70px;
-  width: 70px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
   border: 2px solid black;
-  margin-bottom: 5%;
   object-fit: cover;
 }
 
@@ -75,4 +83,9 @@
   width: 200px;
   border: none;
   height: 50%;
+}
+
+
+.chatbar {
+  background-color: white;
 }

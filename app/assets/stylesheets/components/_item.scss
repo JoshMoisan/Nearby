@@ -45,6 +45,10 @@
   align-items: center;
 }
 
+.user-information a {
+  color: black;
+}
+
 .user-message{
   display :flex;
   justify-content: center;
@@ -54,6 +58,10 @@
 .user-message h1{
   align-self: center;
   margin-bottom: 0px !important;
+}
+
+.user-message a {
+  color: black;
 }
 
 .stars{

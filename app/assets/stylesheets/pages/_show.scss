@@ -1,5 +1,6 @@
 .show-content {
   padding: 22px;
+  padding-bottom: 5%;
   width: 100%;
   background-color: #ffffff;
   background-image:  linear-gradient(#a2a2a2 1.5px, transparent 1px), linear-gradient(to right, #a2a2a2 1.5px, #ffffff 1px);
@@ -21,7 +22,6 @@
   margin-top: 5%;
   align-content: space-between;
   flex-direction: column;
-
 }
 
 .card-top {
@@ -30,20 +30,18 @@
 
 .garage-info {
   max-width: 70%;
-
 }
 
 .garage-info p {
+  margin-top: 2%;
   margin-bottom: 0;
   font-size: 16px;
-  margin-bottom: 0;
 }
-
 
 .card-top h1 {
   border-bottom: 1px solid black;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 4px;
 }
 
 .user-avatar img{
@@ -60,16 +58,20 @@
 }
 
 .card-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding-bottom: 100px;
 }
 
-.card-bottom-half {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: flex-end;
-}
+// .card-bottom {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+// }
+
+// .card-bottom-half {
+//   display: flex;
+//   flex-direction: column-reverse;
+//   align-items: flex-end;
+// }
 
 .user-action {
   display: flex;
@@ -86,7 +88,6 @@
   margin-right: 0px;
  }
 
-
 .user-garage-container {
   background-color: #ffffff;
   // opacity: 0.3;
@@ -100,19 +101,16 @@
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-
   border-radius: 30px;
   border: 2px solid black;
-
   font-weight: 400;
   color: black;
-  height: 50vh;
+  height: 47vh;
   width: 100%;
   box-shadow: 8px 4px 0px black;
 }
 
-
-#user-notif {
+.user-notif {
   display: flex;
   position: absolute;
   background-color: $yellow-blast;
@@ -134,7 +132,6 @@ table {
 }
 
 th, td {
-  // border: 1px solid;
   text-align: center;
 }
 
@@ -144,6 +141,7 @@ th, td {
 
 .user-garage a {
   color:black;
+  text-align: center;
 }
 
 .box-box {
@@ -152,9 +150,6 @@ th, td {
   align-items: center;
   width: 33%;
   max-height: 33%;
-
-  // Proposition border
-  // border: 1px solid black;
-  // border-radius: 20px;
-  // margin: 10px;
 }
+
+
