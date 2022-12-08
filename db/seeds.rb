@@ -43,7 +43,7 @@ puts 'Seeding db 🌱'
       price: [5, 10, 20, 50, 100].sample,
       user_id: user.id
     )
-                    # PROBLEM WITH THE UNSPLASH API
+      
     file = URI.open("https://source.unsplash.com/random/?#{item.category}")
     item.photo.attach(io: file, filename: "#{item.name}.png", content_type: "image/png")
     item.save
