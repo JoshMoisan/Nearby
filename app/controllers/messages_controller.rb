@@ -6,9 +6,16 @@ class MessagesController < ApplicationController
     @message.chatroom = @chatroom
     @message.user = current_user
     @message.save!
+    other_user = @chatroom.participants.find{|participant| participant.user != current_user}.user
+
       ChatroomChannel.broadcast_to(
         @chatroom,
         render_to_string(partial: "message", locals: {message: @message})
+      )
+
+      NotificationChannel.broadcast_to(
+        other_user,
+        1
       )
       head :ok
   end
