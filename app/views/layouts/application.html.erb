@@ -9,7 +9,7 @@
 
     <%= favicon_link_tag "favicon.png", rel: "icon", type: "image/png" %>
 
-    <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
+
     <!-- Google / Search Engine Tags -->
     <meta itemprop="name" content="Nearby">
     <meta itemprop="description" content="Lend & Borrow don’t buy, find it Nearby">
@@ -56,7 +56,7 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
 
 
-    <%= render 'shared/ios_pwa_links' %>
+    <%# <%= render 'shared/ios_pwa_links' %> 
 
 
   </head>
