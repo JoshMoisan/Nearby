@@ -48,7 +48,7 @@ class ItemsController < ApplicationController
   def update
     @item.user = current_user
     if @item.update(item_params)
-      redirect_to item_path(@item), notice: "Successfully updated your item."
+      redirect_to user_path(current_user), notice: "Successfully updated your item."
     else
       render :edit
     end
