@@ -51,21 +51,21 @@ $soft-yellow: #FFF6BF;
   margin-bottom: 0;
 }
 
-.top-right-text h4 {
+.top-right-text h3 {
   transform: rotate(-90deg);
   position:fixed;
-  top: 9%;
-  right: -13%;
+  top: 18%;
+  right: -5%;
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   z-index: 10;
 }
 
-.bottom-left-text h4 {
+.bottom-left-text h3 {
   transform: rotate(-90deg);
   position:fixed;
-  bottom: 12%;
-  left: -20%;
+  bottom: 21%;
+  left: -12%;
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   z-index: 10;
@@ -79,4 +79,23 @@ $soft-yellow: #FFF6BF;
   height: 10px;
   // background: green;
   z-index: 100;
+}
+
+
+.top-right-text svg {
+  height: 12%;
+  position: fixed;
+  top: 1%;
+  right: 3%;
+  z-index: 10;
+}
+
+
+.bottom-left-text svg {
+  transform: rotate(-180deg);
+  height: 12%;
+  position: fixed;
+  bottom: 1%;
+  left: 3%;
+  z-index: 10;
 }
