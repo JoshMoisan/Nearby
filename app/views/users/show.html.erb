@@ -20,7 +20,7 @@
         <% if @user == current_user %>
           <p><strong>Tokens </strong><%= current_user.tokens %> <i class="fa-solid fa-coins"></i></p>
         <% end %>
-        <p><strong>About me </strong><%= current_user.description %></p>
+        <p><strong>About me </strong><%= @user.description %></p>
       </div>
 
       <div class="user-avatar">
