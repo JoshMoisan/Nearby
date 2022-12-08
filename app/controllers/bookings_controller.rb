@@ -33,7 +33,7 @@ class BookingsController < ApplicationController
       @booking.update(end_date: end_date)
       current_user.update(tokens: current_user.tokens - @booking.price_in_token)
       @booking.item.user.update(tokens: current_user.tokens + @booking.price_in_token)
-      redirect_to booking_path(@booking), notice: "Successfully booked!."
+      redirect_to booking_path(@booking), notice: "Successfully booked!"
     else
       redirect_to item_path(@item)
     end

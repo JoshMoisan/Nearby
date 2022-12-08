@@ -2,6 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   after_validation :geocode, if: :will_save_change_to_address?
+  before_save :set_tokens
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   geocoded_by :address
@@ -28,5 +29,9 @@ class User < ApplicationRecord
 
   def booking_reviews
     Review.joins(booking: :item).where("items.user_id=?", self.id)
+  end
+
+  def set_tokens
+    self.tokens = 100
   end
 end
