@@ -91,7 +91,7 @@
           <% end %>
         <% end %> <br>
         <small><%= review.comment %></small><br>
-        <small>by <%= review.booking.user.first_name %> on <%= review.created_at.strftime("%Y-%m-%d") %></small>
+        <small>by @<%= review.booking.user.username %> on <%= review.created_at.strftime("%Y-%m-%d") %></small>
         <hr>
         </p>
       </div>
