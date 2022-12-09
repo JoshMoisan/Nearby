@@ -48,7 +48,7 @@
         </div>
       </div>
       <div class="user-message">
-        <%= link_to "", (@chatroom.present? ? chatroom_path(@chatroom) : chatrooms_path(current_user)) , class: "fa-solid fa-envelope", data:{turbo_method: (@chatroom.present? ? :get : :post)}   %>
+       <h1><%= link_to @chatroom.present? ? chatroom_path(@chatroom) : chatrooms_path(user_id:@item.user.id), data:{turbo_method: @chatroom.present? ? :get : :post} do %><i class="fa-solid fa-envelope"></i><%end%></h1>
       </div>
     </div>
   </div>
