@@ -1,14 +1,14 @@
 .alert {
+  border: 2px solid #F6DB2D;
   position: fixed;
   bottom: 10%;
   right: 10%;
   z-index: 1000;
   transition: 500ms ease-in-out;
   border-radius: 60px;
-  background-color: #FFF6BF;
-  color: rga(0, 0, 0, 0.1);
-  padding: 5px 15px;
-
+  background-color: white;
+  color: black;
+  padding: 0px 15px;
 }
 
 .btn-close-small  {
