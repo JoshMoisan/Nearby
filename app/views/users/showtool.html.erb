@@ -27,9 +27,12 @@
               <%= link_to "Remove", item_path(item), data: {turbo_method: :delete}, class: "button-white mt-3" %>
             </div>
           <% else %>
+            <div class="showtool-description">
+              <small><i><p><strong>Condition:</strong> <%= item.condition %></p></i></small>
+              <small><p><%= item.description %></p></small>
+            </div>
           <% end %>
         </div>
-
       </div>
     <% end %>
     </li>

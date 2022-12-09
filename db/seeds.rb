@@ -30,7 +30,7 @@ puts 'Seeding db 🌱'
     description: Faker::TvShows::SiliconValley.quote,
     tokens: 100,
     password: "123456",
-    address: Faker::Address.city,
+    address: User::ADDRESSES.sample,
     profile_picture: Faker::LoremFlickr.image
   )
   5.times do
@@ -38,12 +38,12 @@ puts 'Seeding db 🌱'
       name: Faker::Commerce.product_name,
       category: Item::CATEGORIES.sample,
       condition: Item::CONDITION.sample,
-      description: Faker::Lorem.sentence(word_count: 15),
+      description: Faker::Quote.yoda,
       item_picture: Faker::LoremFlickr.image,
       price: [5, 10, 20, 50, 100].sample,
       user_id: user.id
     )
-      
+
     file = URI.open("https://source.unsplash.com/random/?#{item.category}")
     item.photo.attach(io: file, filename: "#{item.name}.png", content_type: "image/png")
     item.save
