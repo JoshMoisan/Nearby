@@ -6,9 +6,8 @@
           <a href=<%=new_item_booking_path(booking.item_id)%>>
             <%= cl_image_tag "#{booking.item.photo.key}", crop: :fit, class: 'booking-item-pic' %>
             <h5><%= booking.item.name %></h5></a>
-          <a href=<%=new_booking_review_path(booking.id)%>>
           <% if booking.status === 'ended' %>
-            <p class="review-button"><strong>Add review</strong></p></a>
+            <p class="review-button"><strong>Add review</strong></p>
           <% else %>
             <p></p>
       <% end %>
@@ -35,12 +34,13 @@
             <h5><%= booking.item.name %></h5></a>
           <% if booking.status === 'pending' %>
             <%= link_to booking_path(booking, status: 'confirmed'), data: {turbo_method: :patch} do %>
-            <p class="review-button"><strong>Accept</strong></p></a>
+            <p class="review-button"><strong>Accept</strong></p>
             <% end %>
-            <p></p>
+            <% else %>
+            <p> </p>
           <% end %>
-
         </div>
+
           <div class="booking-info">
           <p class="capitalize"><strong>Status: </strong><%= booking.status %></p>
           <p><strong>Starting date: </strong><br>
