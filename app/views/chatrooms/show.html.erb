@@ -1,4 +1,4 @@
-<div class="show-chat-content" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
+<div class="show-chat-content" style="padding-top: 10%;" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
   <% @other_user = @chatroom.participants.find{|participant| participant.user != current_user} %>
   <a href=<%= user_path(@other_user.user.id) %>>
   <h1><%= @chatroom.name %>
