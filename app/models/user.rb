@@ -17,6 +17,8 @@ class User < ApplicationRecord
   validates :email, :first_name, :last_name, :username, :address, presence: true
   validates :username, uniqueness: true
 
+  ADDRESSES = ["Av. Diagonal 404, Barcelona", "Carrer del Bruc 149, Barcelona", "Carrer de Larrard, 52, Barcelona", "Carrer de Jorge Manrique, 95, Barcelona", "Av. de la Mare de Déu de Montserrat, Barcelona"]
+
   def average_rating
     return nil if booking_reviews.count.zero?
 
