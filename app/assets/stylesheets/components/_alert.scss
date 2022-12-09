@@ -1,14 +1,12 @@
 .alert {
   position: fixed;
-  bottom: 70px;
-  right: 16px;
+  bottom: 10%;
+  right: 10%;
   z-index: 1000;
   transition: 500ms ease-in-out;
   border-radius: 60px;
   background-color: #FFF6BF;
   color: rga(0, 0, 0, 0.1);
-
-  box-shadow: 8px 4px 0px black;
   padding: 5px 15px;
 
 }
@@ -17,4 +15,8 @@
   background-color: #FFF6BF;
   opacity: 0.3;
   border: none;
+}
+
+.alert-dismissible .btn-close {
+position: relative !important;
 }
