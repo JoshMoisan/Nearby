@@ -10,20 +10,12 @@ Rails.application.routes.draw do
       end
     end
     resources :bookings, only: :index
-
   end
-
-
-  # resources :bookings, only: %i[] do
-  #   resources :reviews, only: %i[index new create]
-  # end
-
 
   resources :reviews, only: %i[destroy]
   resources :items, only: %i[index]
 
-  # CHAT
-  resources :chatrooms, only: [:index, :show, :create] do
+  resources :chatrooms, only: %i[index show create] do
     resources :messages, only: :create
   end
 end
