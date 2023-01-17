@@ -14,7 +14,6 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @item = Item.find(params[:item_id])
-    # @chatroom = Chatroom.find(params[:id])
 
     @marker = [{
       lat: @item.user.latitude,
@@ -27,7 +26,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.item = @item
-    @booking.price_in_token = @item.price * params[:booking][:amount_of_days].to_i
+    calculate_price_in_token
     if @booking.save
       end_date = @booking.start_date + @booking.amount_of_days
       @booking.update(end_date: end_date)
@@ -58,6 +57,10 @@ class BookingsController < ApplicationController
   end
 
   private
+
+  def calculate_price_in_token
+    @booking.price_in_token = @item.price * params[:booking][:amount_of_days].to_i
+  end
 
   def set_booking
     @booking = Booking.find(params[:id])
