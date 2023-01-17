@@ -3,11 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   after_validation :geocode, if: :will_save_change_to_address?
   before_save :set_tokens
-
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   geocoded_by :address
-
   has_many :messages, dependent: :destroy
   has_one_attached :photo
   has_many :participants, dependent: :destroy
@@ -15,7 +13,7 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :items, dependent: :destroy
   has_many :rented_items, through: :bookings, source: :item, dependent: :destroy
-
+  # Pending validations on pictures (id, profile)
   validates :email, :first_name, :last_name, :username, :address, presence: true
   validates :username, uniqueness: true
 

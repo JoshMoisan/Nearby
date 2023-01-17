@@ -5,6 +5,8 @@ export default class extends Controller {
   static targets = ["dragging"]
 
   connect() {
+    console.log("Drag Home - connected")
     this.draggingTarget.scrollIntoView({behavior:"smooth"});
+    
   }
 }
